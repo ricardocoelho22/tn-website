@@ -1,0 +1,35 @@
+header
+  height: 100vh
+  background:
+    image: url(../img/landing-bg.png)
+    position: center center
+    repeat: no-repeat
+    size: cover
+
+  nav
+    background:
+      color: transparentize($nav-bg-color, 0.3)
+    height: 90px
+
+    .container
+      display: flex
+      justify-content: space-around
+      align-items: baseline
+      margin: auto
+      width: 900px
+
+    .logo
+      margin: 20px 10px
+
+    a
+      text:
+        decoration: none
+        transform: uppercase
+      align-self: flex-start
+      line-height: 9.0rem
+      color: transparentize($nav-text-color, 0.25)
+
+      &:hover
+        color: $nav-text-color
+
+      
