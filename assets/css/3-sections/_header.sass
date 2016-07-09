@@ -1,4 +1,4 @@
-header
+.site-header
   height: 100vh
   background:
     image: url(../img/landing-bg.png)
@@ -6,30 +6,42 @@ header
     repeat: no-repeat
     size: cover
 
-  nav
+  .nav-container
     background:
       color: transparentize($nav-bg-color, 0.3)
     height: 90px
 
-    .container
+    nav
       display: flex
       justify-content: space-around
       align-items: baseline
       margin: auto
       width: 900px
 
-    .logo
-      margin: 20px 10px
+      .logos
+        order: 1
+        margin-top: 20px
+        display: flex
 
-    a
-      text:
-        decoration: none
-        transform: uppercase
-      align-self: flex-start
-      line-height: 9.0rem
-      color: transparentize($nav-text-color, 0.25)
+        .logo-left
+          margin-right: 10px 
 
-      &:hover
-        color: $nav-text-color
+        .logo-right
+          margin-left: 10px
+
+      a
+        text:
+          decoration: none
+          transform: uppercase
+        align-self: flex-start
+        line-height: 9.0rem
+        color: transparentize($nav-text-color, 0.25)
+        padding: 0 20px
+
+        &:hover
+          color: $nav-text-color
+
+        &:nth-child(n+5)
+          order: 2
 
       
