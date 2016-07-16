@@ -1,0 +1,31 @@
+.section-events
+  display: flex
+  justify-content: space-around
+
+  .event-container
+    display: flex
+    flex-direction: column
+
+    .date
+      background-color: transparentize($event-date-bg-color, 0.25)
+      width: 60px
+      height: 60px
+      color: $event-date-text-color
+      z-index: 1
+
+      .day
+        font-size: 3.0rem
+        font-weight: 700
+        letter-spacing: 0.1rem
+
+      .month
+        font-size: 1.8rem
+        letter-spacing: 0.1rem
+
+    .title
+      font-size: 1.8rem
+      padding-bottom: 15px
+      border-bottom: 4px solid $event-title-border-color
+
+    .description
+      line-height: 2.4rem
