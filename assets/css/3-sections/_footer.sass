@@ -1,13 +1,11 @@
 .site-footer
   background-color: $footer-bg-color
   display: flex
-  justify-content: space-between
+  justify-content: space-around
   padding: 40px 25px
   color: $footer-text-color 
 
   .footer-section
-    display: flex
-    flex-direction: column
     margin: 15px
     max-width: 40%
 
@@ -58,3 +56,7 @@
         text-align: center
         line-height: 40px
         margin-top: 10px
+
+        &:hover
+          background-color: $footer-hover-bg-color
+          cursor: pointer
