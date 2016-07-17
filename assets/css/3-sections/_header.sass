@@ -1,8 +1,8 @@
 .site-header
-  height: 100vh
+  height: 95vh
   background:
     image: url(../img/landing-bg.png)
-    position: center center
+    position: center top
     repeat: no-repeat
     size: cover
 
@@ -14,7 +14,7 @@
     nav
       display: flex
       justify-content: space-around
-      align-items: baseline
+      align-items: flex-start
       margin: auto
       width: 900px
 
@@ -30,13 +30,13 @@
         text:
           decoration: none
           transform: uppercase
-        align-self: flex-start
-        line-height: 9.0rem
-        color: transparentize($nav-text-color, 0.25)
-        padding: 0 20px
+        margin-top: 30px
+        color: $nav-text-color
+        padding: 10px
 
         &:hover
-          color: $nav-text-color
+          color: $nav-hover-text-color
+          border-bottom: 3px solid $nav-hover-border-color
 
         &:nth-child(n+5)
           order: 2
