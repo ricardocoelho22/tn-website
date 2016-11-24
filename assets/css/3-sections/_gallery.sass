@@ -10,8 +10,51 @@
       position: relative
       overflow: hidden
       padding-bottom: 66%
-      margin-bottom: 20px
-      transition: all 0.3s ease
+      // margin-bottom: 20px
+      margin: 0px -15px
+      // transition: all 0.3s linear
+      
+      .overlay
+        width: 100%
+        height: 100%
+        position: absolute
+        overflow: hidden
+        top: 0
+        left: 0
+        opacity: 0
+        background-color: rgba(0,0,0,0.5)
+        transition: all 0.4s ease-in-out
+        cursor: pointer
+
+        &:hover
+          opacity: 1
+          filter: alpha(opacity=100)
+
+          h3
+            opacity: 1
+            filter: alpha(opacity=100)
+            -ms-transform: translatey(0)
+            -webkit-transform: translatey(0)
+            transform: translatey(0)
+            -webkit-transition: all .2s ease-in
+            transition: all .4s ease-out
+
+          img
+            transform: scale(1.1)
+
+      h3
+        text-transform: uppercase
+        color: $white
+        text-align: center
+        position: relative
+        font-size: 1.6rem
+        background: rgba(0,0,0,0.6)
+        -webkit-transform: translatey(-100px)
+        -ms-transform: translatey(-100px)
+        transform: translatey(-100px)
+        -webkit-transition: all .2s ease-in
+        transition: all .2s ease-in
+        padding: 10px
 
       img
         position: absolute
@@ -20,14 +63,4 @@
         left: 0
         right: 0
         margin: auto
-        transition: all 0.3s ease
-
-        &:hover
-          transform: scale(1.25)
-          // cursor: pointer
-          // border: 2px solid $white
-
-      &:hover
-        // transform: scale(1.25)
-        // cursor: pointer
-        // border: 2px solid $white
+        transition: all 0.4s linear
