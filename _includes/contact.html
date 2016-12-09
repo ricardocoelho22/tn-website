@@ -1,62 +1,75 @@
 <section class="section-contact">
   <div class="container">
-    <div class="map"></div>
-    <div class="text-container">
-      <div class="contact-info">
-        <div class="info-section">
-          <p class="title">Localização</p>
-          <div class="description">
-            <p>Sporting Clube de Alenquer</p>
-            <p>Av. Jaime Ferreira</p>
-            <p>Morada 3</p>
+    <div class="row">
+      <div class="col-md-12 map"></div>
+      <div class="col-md-4 col-sm-12">
+        <div class="row contact-info">
+          <div class="col-md-12 col-sm-4">
+            <div class="info-section">
+              <p class="title">Localização</p>
+              <div class="description">
+                <p>Sporting Clube de Alenquer</p>
+                <p>Av. Jaime Ferreira</p>
+                <p>Morada 3</p>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="info-section">
-          <p class="title">Contacto</p>
-          <div class="description">
-            <p>Telefone: 999999999</p>
-            <p>Email: xxx@xxx.xxx</p>
-            <a href="#0" class="facebook-icon">
-              <i class="fa fa-facebook-official"></i>
-            </a>
+          <div class="col-md-12 col-sm-4">
+            <div class="info-section">
+              <p class="title">Horário</p>
+              <div class="description">
+                <p class="subtitle">Crianças</p>
+                <p>Terça-feira: 19:00h - 19:45h</p>
+                <p>Quinta-feira: 19:00h - 19:45h</p>
+                <p class="subtitle">Adultos</p>
+                <p>Terça-feira: 19:45h - 21:15h</p>
+                <p>Quinta-feira: 19:45h - 21:15h</p>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="info-section">
-          <p class="title">Horário</p>
-          <div class="description">
-            <p class="subtitle">Crianças</p>
-            <p>Terça-feira: 19:00h - 19:45h</p>
-            <p>Quinta-feira: 19:00h - 19:45h</p>
-            <p class="subtitle">Adultos</p>
-            <p>Terça-feira: 19:45h - 21:15h</p>
-            <p>Quinta-feira: 19:45h - 21:15h</p>
+          <div class="col-md-12 col-sm-4">
+            <div class="info-section">
+              <p class="title">Contacto</p>
+              <div class="description">
+                <p>Telefone: 999999999</p>
+                <p>Email: xxx@xxx.xxx</p>
+                <a href="#0" class="facebook-icon">
+                  <i class="fa fa-facebook-official"></i>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="message-form">
+      <div class="col-md-8 col-sm-12 message-form">
         <p class="title">Envie-nos uma mensagem!</p>
         <form action="">
-          <div class="sender-info-group">
-            <label>
-              Nome
-              <input type="text" name="name" required>
-            </label>
-            <label>
-              Email
-              <input type="email" name="email" required>
-            </label>
+          <div class="row">
+            <div class="col-sm-6">
+              <label for="name">
+                Nome
+                <input type="text" name="name" title="O seu nome" required>
+              </label>
+            </div>
+            <div class="col-sm-6">
+              <label for="email">
+                Email
+                <input type="email" name="email" title="O seu email" required>
+              </label>
+            </div>
           </div>
-          <label>
+          <label for="subject">
             Assunto
-            <input type="text" name="subject" required>
-          </label>
+            <input type="text" name="subject" title="Assunto da mensagem" required>
+          </label for="message">
           <label>
             Mensagem
-            <textarea name="message" required></textarea>
+            <textarea name="message" name="message" title="Mensagem a enviar" required></textarea>
           </label>
           <button class="main-button" type="submit">Enviar</button>
         </form>
       </div>
     </div>
+  </div>
   </div>
 </section>

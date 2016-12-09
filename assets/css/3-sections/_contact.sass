@@ -11,48 +11,20 @@
       width: 100%
       height: 400px
 
-    .text-container
-      display: flex
-      justify-content: space-between
+    // .text-container
+    //   display: flex
+    //   justify-content: space-between
 
-      p
-        margin: 0px
+    p
+      margin: 0px
 
-      .contact-info
-        min-width: 175px
-        margin-right: 10px
+    .contact-info
 
-        .info-section
-          margin-top: 35px
-
-          .title
-            font-size: 2.4rem
-            color: $dark-gray
-            letter-spacing: 0.1rem
-            text-transform: uppercase
-            font-weight: 700
-            margin-bottom: 10px
-
-          .description
-            color: $gray
-            line-height: 2.4rem
-
-            .facebook-icon
-              font-size: 2.0rem
-              color: $facebook-color
-              text-decoration: none
-
-          .subtitle
-            color: $dark-gray
-            letter-spacing: 0.1rem
-            text-transform: uppercase
-
-      .message-form
-        color: $gray
-        line-height: 2.4rem
+      .info-section
         margin-top: 35px
-        width: 620px
-        margin-left: 10px
+
+        @media (max-width: $desktop-width)
+          text-align: center
 
         .title
           font-size: 2.4rem
@@ -60,41 +32,56 @@
           letter-spacing: 0.1rem
           text-transform: uppercase
           font-weight: 700
-          text-align: center
-        
-        input, textarea
-          border: 2px solid $gray
-          border-radius: 3px
+          margin-bottom: 10px
+
+        .description
           color: $gray
-          width: 100%
-          font-size: 1.6rem
-          padding: 10px
+          line-height: 2.4rem
 
-          &:focus
-            outline: none
-            border-color: $green
+          .facebook-icon
+            font-size: 2.0rem
+            color: $facebook-color
+            text-decoration: none
 
-        textarea
-          height: 180px
-          overflow-y: auto
-          resize: none
-          word-wrap: break-word
+        .subtitle
+          color: $dark-gray
+          letter-spacing: 0.1rem
+          text-transform: uppercase
 
-        label, button
-          margin-top: 15px
 
-        label
-          display: block
+    .message-form
+      color: $gray
+      line-height: 2.4rem
+      margin-top: 35px
 
-        .sender-info-group
-          display: flex
-          justify-content: space-between
+      .title
+        font-size: 2.4rem
+        color: $dark-gray
+        letter-spacing: 0.1rem
+        text-transform: uppercase
+        font-weight: 700
+        text-align: center
+      
+      input, textarea
+        border: 2px solid $gray
+        border-radius: 3px
+        color: $gray
+        width: 100%
+        font-size: 1.6rem
+        padding: 10px
 
-          label
-            width: 50%
+        &:focus
+          outline: none
+          border-color: $green
 
-            &:nth-child(1)
-              padding-right: 10px
+      textarea
+        height: 180px
+        overflow-y: auto
+        resize: none
+        word-wrap: break-word
 
-            &:nth-child(2)
-              padding-left: 10px
+      label, button
+        margin-top: 15px
+
+      label
+        display: block
