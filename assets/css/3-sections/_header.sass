@@ -1,43 +1,95 @@
 .site-header
-  height: 95vh
+  height: 500px
   background:
     image: url(../img/landing-bg.png)
     position: center top
     repeat: no-repeat
     size: cover
 
-  .nav-container
-    background:
-      color: transparentize($black, 0.3)
-    height: 90px
+  .center
+    display: table
+    margin: 0 auto
 
-    nav
-      display: flex
-      justify-content: space-around
-      align-items: flex-start
-      margin: auto
-      width: 900px
+  .logos img &:first-child
+    margin-right: 10px
 
-      .logos
-        order: 1
-        margin: 20px 10px
-        display: flex
+  #navbar-primary
+    background-color: transparentize($black, 0.2)
+    border-radius: 0
+    border: none
+    max-height: 90px
 
-        img
-          margin: 0 10px
+    .navbar-header
 
-      a
-        text:
-          decoration: none
-          transform: uppercase
-        margin-top: 30px
-        color: $white
-        padding: 10px
+      .navbar-toggle
+        background: transparent
+        border: none
+        position: absolute
+        top: 0
+        right: 0
 
-        &:hover
-          color: $green
+        &:active .icon-bar
+          background-color: $green
 
-        &:nth-child(n+5)
-          order: 2
+        .icon-bar
+          background-color: $white
+
+      .navbar-brand
+        text-align: center
+        display: none
+
+    .navbar-nav
+      text-align: center
+
+      .active a
+        color: $green
+
+      li 
+        display: inline
+
+        a 
+          line-height: 60px
+          text:
+            decoration: none
+            transform: uppercase
+          color: $white
+          padding: 15px
+
+          &:hover, &:focus
+            color: $green
+            background-color: transparent
+
+@media (max-width: $desktop-width)
+  .site-header
+    height: 400px
+
+    .logos img
+      max-height: 90px
+
+      &:first-child
+        margin-right: 5px
+
+    #navbar-primary .navbar-nav li a
+      padding: 15px 10px
+
+@media (max-width: $tablet-width)
+  .site-header 
+    height: 350px
+
+    #navbar-primary
+      max-height: none
+
+      .navbar-header .navbar-brand
+        display: block
+
+      .navbar-nav 
+        margin-top: 70px
+        
+        li a
+          line-height: 20px
+
+        .inline-brand
+          display: none
+
 
       
