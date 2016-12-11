@@ -1,23 +1,15 @@
 .section-events
   background-color: $light-gray
-  padding: 0 30px
-
-  .container
-    display: flex
-    justify-content: space-between
-    max-width: 960px
-    margin: auto
+  padding: 0 30px 50px 30px
 
   .event-container
-    max-width: 30%
-    height: 485px
-    background-color: $white
-    margin: -35px 10px 50px 10px
-    position: relative
+    margin: -35px 0 0 0
 
-    &:hover
-      box-shadow: 0 3px 10px $shadow-gray
-      transition-duration: 0.2s
+    &:hover 
+
+      .event-header, .event-body
+        box-shadow: 0 3px 10px $shadow-gray
+        transition-duration: 0.2s
 
     .event-header
       height: 150px
@@ -40,32 +32,56 @@
         .day
           font-size: 3.0rem
           font-weight: 700
-          letter-spacing: 0.1rem
 
         .month
           font-size: 1.8rem
-          letter-spacing: 0.1rem
           text-transform: uppercase
 
-    .title
-      font-size: 1.8rem
-      max-height: 60px
-      letter-spacing: 0.1rem
-      color: $dark-gray
-      padding-bottom: 15px
-      border-bottom: 4px solid $green
-      margin: 15px 15px 0 15px
-      overflow: hidden
+    .event-body
+      background-color: $white
+      height: 335px
+      padding-top: 15px
+      position: relative
 
-    .description
-      color: $gray
-      max-height: 170px
-      line-height: 2.4rem
-      margin: 15px 15px 0 15px
-      overflow: hidden
+      .title
+        font-size: 1.8rem
+        max-height: 60px
+        color: $dark-gray
+        padding-bottom: 15px
+        border-bottom: 4px solid $green
+        margin: 0 15px
+        overflow: hidden
 
-    .event-button
-      margin: 15px
-      position: absolute
-      left: 0
-      bottom: 0
+      .description
+        color: $gray
+        height: 170px
+        line-height: 2.4rem
+        margin: 15px 15px 0 15px
+        overflow: hidden
+
+      .event-button
+        margin: 15px
+        position: absolute
+        left: 0
+        bottom: 0
+
+@media (max-width: $tablet-width)
+  .section-events .event-container
+    margin: 0 0 20px 0
+
+    &:first-child
+      margin: -10px 0 20px 0
+
+    &:last-child
+      margin: 0
+
+    .event-body
+      height: auto
+      max-height: 290px
+
+      .description
+        height: auto
+        max-height: 120px
+
+      .event-button
+        position: static
