@@ -1,0 +1,79 @@
+.section-contact
+  background-color: $bg-color
+  padding: 50px 0
+
+  .map
+    background-color: #f1f
+    height: 400px
+
+  p
+    margin: 0px
+
+  .contact-info
+
+    .info-section
+      margin-top: 30px
+
+      @media (max-width: $desktop-width)
+        text-align: center
+
+      .title
+        font-size: 2.4rem
+        color: $heading-color
+        text-transform: uppercase
+        font-weight: 700
+        margin-bottom: 10px
+        letter-spacing: 0.1rem
+
+      .description
+        color: $text-color
+        line-height: 2.4rem
+
+        .facebook-icon
+          font-size: 2.0rem
+          color: $facebook-color
+          text-decoration: none
+
+      .subtitle
+        color: $heading-color
+        text-transform: uppercase
+        letter-spacing: 0.1rem
+
+
+  .message-form
+    color: $text-color
+    line-height: 2.4rem
+    margin-top: 30px
+
+    .title
+      font-size: 2.4rem
+      color: $heading-color
+      text-transform: uppercase
+      font-weight: 700
+      text-align: center
+      letter-spacing: 0.1rem
+    
+    input, textarea
+      border: 2px solid $input-border-color
+      border-radius: 3px
+      color: $text-color
+      width: 100%
+      font-size: 1.6rem
+      padding: 10px
+
+      &:focus
+        outline: 0
+        border-color: $input-border-highlight-color
+        box-shadow: 0 0 8px $input-border-highlight-shadow-color
+
+    textarea
+      height: 180px
+      overflow-y: auto
+      resize: none
+      word-wrap: break-word
+
+    label, button
+      margin-top: 15px
+
+    label
+      display: block

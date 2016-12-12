@@ -1,0 +1,36 @@
+.section-group
+  background-color: $bg-alt-color
+  padding: 50px 0
+
+  p
+    margin: 0
+
+  .subtitle
+    font-size: 2.4rem
+    color: $heading-color
+
+  .title
+    font-size: 4.8rem
+    font-weight: 700
+    text-transform: uppercase
+    color: $heading-color
+    margin-bottom: 20px
+
+  .description
+    line-height: 2.4rem
+    color: $text-color
+    margin-bottom: 20px
+
+  img
+    width: 100%
+    -webkit-box-shadow: 0 10px 6px -6px $shadow-color
+    -moz-box-shadow: 0 10px 6px -6px $shadow-color
+    box-shadow: 0 10px 6px -6px $shadow-color
+
+    &:first-child
+      margin-bottom: 20px
+
+@media (max-width: $tablet-width)
+  .section-group .center-container
+    max-width: 500px
+    margin: auto
