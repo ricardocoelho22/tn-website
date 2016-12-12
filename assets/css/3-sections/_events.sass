@@ -1,6 +1,6 @@
 .section-events
   background-color: $light-gray
-  padding: 0 30px 50px 30px
+  padding-bottom: 50px
 
   .event-container
     margin: -35px 0 0 0
@@ -66,22 +66,31 @@
         bottom: 0
 
 @media (max-width: $tablet-width)
-  .section-events .event-container
-    margin: 0 0 20px 0
+  .section-events 
 
-    &:first-child
-      margin: -10px 0 20px 0
+    .center-container
+      max-width: 500px
+      margin-left: auto
+      margin-right: auto
 
-    &:last-child
-      margin: 0
+    .event-container
+      margin-bottom: 20px
+      margin-top: 0
 
-    .event-body
-      height: auto
-      max-height: 290px
+      &:first-child
+        margin-top: -10px
+        margin-bottom: 20px
 
-      .description
+      &:last-child
+        margin-bottom: 0
+
+      .event-body
         height: auto
-        max-height: 120px
+        max-height: 290px
 
-      .event-button
-        position: static
+        .description
+          height: auto
+          max-height: 120px
+
+        .event-button
+          position: static
