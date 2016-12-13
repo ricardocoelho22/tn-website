@@ -1,12 +1,8 @@
 .section-classes
   background-color: $bg-color
-  padding: 50px 0
 
   .text-container
     max-width: 85%
-
-  p
-    margin: 0
 
   img
     width: 100%
@@ -14,26 +10,13 @@
     -webkit-filter: drop-shadow(4px 4px 2px $shadow-color)
 
   .title
-    font-size: 2.4rem
-    color: $heading-color
-    text-transform: uppercase
-    font-weight: 700
     margin-bottom: 15px
-
-
-  .description
-    color: $text-color
-    line-height: 2.4rem
 
 @media (max-width: $tablet-width)
   .section-classes
 
-    .center-container
-      max-width: 500px
-      margin: auto 
-
-      &:nth-child(1)
-        margin-bottom: 20px
+    .center-container:first-child
+      margin-bottom: 20px
 
     .text-container
       max-width: none
