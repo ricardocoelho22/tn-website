@@ -1,76 +1,71 @@
 .site-footer
   background-color: $footer-bg-color
-  padding: 50px 0
-  color: $footer-text-color
 
-  .footer-section
+  span, p, h5, h6, div
+    color: $footer-text-color
 
-    .logos 
-      // height: 135px
+  .logos img
+    max-width: 45%
+    height: auto
+    margin-right: 10px
 
-      img
-        max-width: 45%
-        height: auto
-        margin-right: 10px
-        // max-height: 100%
+    &:last-child
+      margin-right: 0
 
-        &:last-child
-          margin-right: 0
+  .credits
+    margin-top: 5px
+    display: block
 
-    .credits
-      margin-top: 5px
+  h5
+    margin-bottom: 15px
+
+  .site-links
+    list-style: none
+    padding: 0
+    margin: 0
+
+    li a
+      text-decoration: none
+      color: $footer-text-color
+      text-transform: uppercase
+      letter-spacing: 0.1rem
       display: block
 
-    .title
-      font-size: 1.6rem
-      font-weight: 700
-      text-transform: uppercase
-      margin: 0 0 15px 0
-      letter-spacing: 0.1rem
+      &:hover, &:focus
+        color: $footer-text-highlight-color
 
-    .description
-      line-height: 2.4rem
+  h6
+    margin-top: 10px
 
-      p
-        margin: 0
+  .contact-icon
+    width: 23px
+    margin-right: 3px
+    text-align: center
+    
+  .schedule-entry span, .contact-line
+    white-space: nowrap
 
-      .contact-line
-        margin-bottom: 5px
+  .social-networks a
+    text-decoration: none
+    background-color: $footer-social-bg-color
+    color: $footer-social-text-color
+    display: inline-block
+    width: 40px
+    height: 40px
+    border-radius: 50%
+    text-align: center
+    line-height: 40px
+    margin-top: 10px
+    cursor: pointer
 
-        .contact-icon
-          width: 23px
-          margin-right: 3px
-          text-align: center
+    &:hover, &:focus
+      background-color: $footer-social-highlight-color
 
-    .subtitle
-      text-transform: uppercase
-      letter-spacing: 0.1rem
-      
-    .schedule-entry span
-      white-space: nowrap
+    &:active
+      box-shadow: inset 0 0 5px 2px rgba(0, 0, 0, .5)
 
     i
-      font-size: 1.8rem
-
-    .social-networks
-      a
-        text-decoration: none
-        background-color: $footer-social-bg-color
-        color: $footer-social-text-color
-        display: inline-block
-        width: 40px
-        height: 40px
-        border-radius: 50%
-        text-align: center
-        line-height: 40px
-        margin-top: 10px
-        cursor: pointer
-
-        &:hover, &:focus
-          background-color: $footer-social-highlight-color
-
-        &:active
-          box-shadow: inset 0 0 5px 2px rgba(0, 0, 0, .5)
+    font-size: 1.8rem
 
 @media (max-width: $tablet-width)
   .site-footer .footer-section
