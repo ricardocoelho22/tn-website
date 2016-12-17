@@ -44,24 +44,20 @@ header
     .navbar-nav
       text-align: center
 
+      li a
+        line-height: 60px
+        text-decoration: none
+        text-transform: uppercase
+        color: $nav-text-color
+        letter-spacing: 0.1rem
+        padding: 15px
+
+        &:hover, &:focus
+          color: $nav-text-highlight-color
+          background-color: transparent
+
       .active a
         color: $nav-text-highlight-color
-
-      li 
-        display: inline
-
-        a 
-          line-height: 60px
-          text:
-            decoration: none
-            transform: uppercase
-          color: $nav-text-color
-          letter-spacing: 0.1rem
-          padding: 15px
-
-          &:hover, &:focus
-            color: $nav-text-highlight-color
-            background-color: transparent
 
 @media (max-width: $desktop-width)
   .site-header
