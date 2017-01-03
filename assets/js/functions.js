@@ -42,12 +42,13 @@ function sendEmail(address, message) {
     url: 'https://formspree.io/' + address,
     data: message,
     datatype: 'json',
-    success: function(response) {
-      $('#contact-form').get(0).reset();
-      $('#sendSuccessModal').modal();
-    },
-    error: function() {
-      $('#sendFailModal').modal();
+    complete: function(jqXHR) {
+      if (jqXHR.readyState == 0 && jqXHR.status == 0) {
+        $('#contact-form').get(0).reset();
+        $('#sendSuccessModal').modal();
+      } else {
+        $('#sendFailModal').modal();
+      }
     }
   });
 };
