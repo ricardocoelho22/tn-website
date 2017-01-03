@@ -5,6 +5,10 @@ var googleMapsInfo = {
   coordTitle: 'Sporting Clube de Alenquer'
 };
 
+var emailServiceInfo = {
+  address: 'ricardocoelho22@gmail.com'
+}
+
 function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 17,
@@ -28,8 +32,8 @@ function loadGoogleAPI(apiKey, callback) {
 };
 
 function isMessageValid(name, email, subject, message) {
-  return name.val() == "" || email.val() == "" || subject.val() == "" ||
-    message.val() == "";
+  return name.val() != "" && email.val() != "" && subject.val() != "" &&
+    message.val() != "";
 };
 
 function sendEmail(address, message) {
@@ -37,15 +41,15 @@ function sendEmail(address, message) {
     method: 'POST',
     url: 'https://formspree.io/' + address,
     data: message,
-    datatype: 'json'
+    datatype: 'json',
+    success: function(response) {
+      $('#contact-form').get(0).reset();
+      $('#sendSuccessModal').modal();
+    },
+    error: function() {
+      $('#sendFailModal').modal();
+    }
   });
-};
-
-function showSubmitAlert(successful) {
-  if (successful)
-    $('.submit-success').fadeToggle(400);
-  else
-    $('.submit-fail').fadeToggle(400);
 };
 
 $(document)
@@ -59,11 +63,13 @@ $(document)
       var message = $('#contact-message');
       e.preventDefault();
       if (isMessageValid(name, email, subject, message)) {
-        sendEmail('ricardocoelho22@gmail.com', $('#contact-form').serialize());
-        $(this).get(0).reset();
-        // showSubmitAlert(true);
+        sendEmail(emailServiceInfo.address, $('#contact-form').serialize());
       } else {
-        // showSubmitAlert(false);
+        $('#message-invalid-alert').show();
       }
     });
-});
+
+    $('.alert-close').on('click', function() {
+      $(this).parent().hide();
+    });
+  });

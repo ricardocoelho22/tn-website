@@ -51,6 +51,22 @@
     label
       color: $text-color
 
+    .modal button, .alert button
+      margin: 0
+
+    .alert
+      margin-top: 15px
+      font-size: 1.8rem
+      display: none
+
+    .modal .modal-success .modal-content
+      border-color: $modal-success-border-color
+      box-shadow: 0 0 16px $modal-success-shadow-color
+
+    .modal .modal-fail .modal-content
+      border-color: $modal-fail-border-color
+      box-shadow: 0 0 16px $modal-success-shadow-color
+
 @media (max-width: $desktop-width)
   .info-section
     text-align: center
