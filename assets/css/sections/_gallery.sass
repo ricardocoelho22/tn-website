@@ -1,6 +1,33 @@
 .section-gallery
   background-color: $bg-alt-color
 
+  .modal 
+
+    .close 
+      position: absolute
+      top: 15px
+      right: 35px
+      color: $white
+      font-size: 40px
+      font-weight: bold
+      transition: 0.3s
+      opacity: 0.5
+
+      &:hover, &:focus 
+        color: #bbb
+        text-decoration: none
+        cursor: pointer
+
+    .modal-dialog 
+
+      h4
+        text-align: center
+        color: white
+        margin: 10px 0
+
+      img
+        max-width: 100%
+
   .img-container
     position: relative
     overflow: hidden

@@ -57,6 +57,10 @@ $(document)
   .ready(function() {
     loadGoogleAPI(googleMapsInfo.apiKey, googleMapsInfo.callback);
 
+    $('.img-container').on('click', function() {
+      $('#galleryModal').modal();
+    });
+
     $('#contact-form').submit(function(e) {
       var name = $('#contact-name');
       var email = $('#contact-email');
