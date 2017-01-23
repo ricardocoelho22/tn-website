@@ -1,29 +1,43 @@
 .section-gallery
   background-color: $bg-alt-color
 
-  .modal 
+  .modal
+    padding: 0
 
-    .close 
+    .modal-close
       position: absolute
-      top: 15px
-      right: 35px
-      color: $white
-      font-size: 40px
-      font-weight: bold
+      top: -15px
+      right: -15px
+      color: $gallery-modal-close-btn-color
+      font-size: 2.8rem
       transition: 0.3s
-      opacity: 0.5
+      opacity: 1
+      border: 2px solid white
+      border-radius: 50%
+      background-color: $black
+      width: 30px
+      height: 30px
+      text-align: center
+      vertical-align: middle
+      line-height: 20px
+      -webkit-box-shadow: -3px 3px 5px 0px $gallery-modal-shadow-color
+      -moz-box-shadow: -3px 3px 5px 0px $gallery-modal-shadow-color
+      box-shadow: -3px 3px 5px 0px $gallery-modal-shadow-color
 
       &:hover, &:focus 
-        color: #bbb
+        color: $gallery-modal-close-btn-highlight-color
+        border-color: $gallery-modal-close-btn-highlight-color
         text-decoration: none
         cursor: pointer
 
-    .modal-dialog 
+    .modal-dialog
 
-      h4
+      .modal-caption
         text-align: center
-        color: white
+        display: block
+        color: $gallery-caption-color
         margin: 10px 0
+        font-size: 1.8rem
 
       img
         max-width: 100%
@@ -78,4 +92,8 @@
         .caption
           text-transform: uppercase
           color: $gallery-caption-color
+
+@media (max-width: $tablet-width)
+  .section-gallery .modal .modal-dialog
+    margin: 15px
           
