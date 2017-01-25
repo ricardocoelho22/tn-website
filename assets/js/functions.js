@@ -53,28 +53,42 @@ function sendEmail(address, message) {
   });
 };
 
+function initializeGallerySection() {
+  $('.img-container').on('click', function() {
+    var galleryModal = $('#galleryModal');
+    var imageElem = $(this).find('img')[0];
+    var caption = $(this).find('.caption')[0].innerHTML;
+    var modalImageElem = galleryModal.find('img')[0];
+    var modalCaptionElem = galleryModal.find('.modal-caption')[0];
+    modalImageElem.src = imageElem.src;
+    modalImageElem.alt = imageElem.alt;
+    modalCaptionElem.innerHTML = caption;
+    galleryModal.modal();
+  });
+};
+
+function initializeContactSection() {
+  $('#contact-form').submit(function(event) {
+    var name = $('#contact-name');
+    var email = $('#contact-email');
+    var subject = $('#contact-subject');
+    var message = $('#contact-message');
+    event.preventDefault();
+    if (isMessageValid(name, email, subject, message)) {
+      sendEmail(emailServiceInfo.address, $('#contact-form').serialize());
+    } else {
+      $('#message-invalid-alert').show();
+    }
+  });
+
+  $('.alert-close').on('click', function() {
+    $(this).parent().hide();
+  });
+};
+
 $(document)
   .ready(function() {
     loadGoogleAPI(googleMapsInfo.apiKey, googleMapsInfo.callback);
-
-    $('.img-container').on('click', function() {
-      $('#galleryModal').modal();
-    });
-
-    $('#contact-form').submit(function(e) {
-      var name = $('#contact-name');
-      var email = $('#contact-email');
-      var subject = $('#contact-subject');
-      var message = $('#contact-message');
-      e.preventDefault();
-      if (isMessageValid(name, email, subject, message)) {
-        sendEmail(emailServiceInfo.address, $('#contact-form').serialize());
-      } else {
-        $('#message-invalid-alert').show();
-      }
-    });
-
-    $('.alert-close').on('click', function() {
-      $(this).parent().hide();
-    });
+    initializeGallerySection();
+    initializeContactSection();
   });
