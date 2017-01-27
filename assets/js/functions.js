@@ -36,10 +36,17 @@ function loadGoogleAPI(apiKey, callback) {
 };
 
 function initializeHeader() {
-  $('.site-header .nav.navbar-nav li').on('click', function() {
+  $('.site-header .nav.navbar-nav li').on('click', function(event) {
     $(this).parent().find('.active').removeClass('active');
     $(this).addClass('active');
-  })
+    var target = $($(this).find('a').attr('href'));
+    if (target.length) {
+      event.preventDefault();
+      $('html, body').stop().animate({
+        scrollTop: target.offset().top
+      }, 1000);
+    }
+  });
 };
 
 function setModalImage(galleryModal, galleryImage) {
