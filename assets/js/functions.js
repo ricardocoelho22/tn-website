@@ -48,6 +48,7 @@ function initBodyEvents() {
 
   $('#back-to-top').click(function(event) {
     event.preventDefault();
+    $('.site-header .nav.navbar-nav .active').removeClass('active');
     $('body,html').animate({
       scrollTop: 0
     }, 1000);
