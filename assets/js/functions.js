@@ -42,8 +42,15 @@ function initializeHeader() {
     var target = $($(this).find('a').attr('href'));
     if (target.length) {
       event.preventDefault();
+      var topCoord = target.offset().top;
+
+      * /Account for the event negative margin*/
+      if (target.attr('id') == 'eventos') {
+        topCoord += parseInt(target.find('.event-container').css(
+          'marginTop'));
+      }
       $('html, body').stop().animate({
-        scrollTop: target.offset().top
+        scrollTop: topCoord
       }, 1000);
     }
   });
@@ -135,7 +142,7 @@ function initializeContactSection() {
 
 $(document)
   .ready(function() {
-    loadGoogleAPI(googleMapsInfo.apiKey, googleMapsInfo.callback);
+    // loadGoogleAPI(googleMapsInfo.apiKey, googleMapsInfo.callback);
     initializeHeader();
     initializeGallerySection();
     initializeContactSection();
