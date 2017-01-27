@@ -35,26 +35,11 @@ function loadGoogleAPI(apiKey, callback) {
   head.appendChild(script);
 };
 
-function isMessageValid(name, email, subject, message) {
-  return name.val() != "" && email.val() != "" && subject.val() != "" &&
-    message.val() != "";
-};
-
-function sendEmail(address, message) {
-  $.ajax({
-    method: 'POST',
-    url: 'https://formspree.io/' + address,
-    data: message,
-    datatype: 'json',
-    complete: function(jqXHR) {
-      if (jqXHR.readyState == 0 && jqXHR.status == 0) {
-        $('#contact-form').get(0).reset();
-        $('#sendSuccessModal').modal();
-      } else {
-        $('#sendFailModal').modal();
-      }
-    }
-  });
+function initializeHeader() {
+  $('.site-header .nav.navbar-nav li').on('click', function() {
+    $(this).parent().find('.active').removeClass('active');
+    $(this).addClass('active');
+  })
 };
 
 function setModalImage(galleryModal, galleryImage) {
@@ -100,6 +85,28 @@ function initializeGallerySection() {
   });
 };
 
+function isMessageValid(name, email, subject, message) {
+  return name.val() != "" && email.val() != "" && subject.val() != "" &&
+    message.val() != "";
+};
+
+function sendEmail(address, message) {
+  $.ajax({
+    method: 'POST',
+    url: 'https://formspree.io/' + address,
+    data: message,
+    datatype: 'json',
+    complete: function(jqXHR) {
+      if (jqXHR.readyState == 0 && jqXHR.status == 0) {
+        $('#contact-form').get(0).reset();
+        $('#sendSuccessModal').modal();
+      } else {
+        $('#sendFailModal').modal();
+      }
+    }
+  });
+};
+
 function initializeContactSection() {
   $('#contact-form').submit(function(event) {
     var name = $('#contact-name');
@@ -122,6 +129,7 @@ function initializeContactSection() {
 $(document)
   .ready(function() {
     loadGoogleAPI(googleMapsInfo.apiKey, googleMapsInfo.callback);
+    initializeHeader();
     initializeGallerySection();
     initializeContactSection();
   });
