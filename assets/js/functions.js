@@ -35,7 +35,26 @@ function loadGoogleAPI(apiKey, callback) {
   head.appendChild(script);
 };
 
-function initializeHeader() {
+function initBodyEvents() {
+  $(window).scroll(function() {
+    /*Account for negative event margin*/
+    var limit = $('#eventos .event-container').offset().top;
+    if ($(this).scrollTop() >= limit) {
+      $('#back-to-top').fadeIn();
+    } else {
+      $('#back-to-top').fadeOut();
+    }
+  });
+
+  $('#back-to-top').click(function(event) {
+    event.preventDefault();
+    $('body,html').animate({
+      scrollTop: 0
+    }, 1000);
+  });
+};
+
+function initHeaderEvents() {
   $('.site-header .nav.navbar-nav li').on('click', function(event) {
     $(this).parent().find('.active').removeClass('active');
     $(this).addClass('active');
@@ -44,10 +63,9 @@ function initializeHeader() {
       event.preventDefault();
       var topCoord = target.offset().top;
 
-      * /Account for the event negative margin*/
+      /*Account for the event negative margin*/
       if (target.attr('id') == 'eventos') {
-        topCoord += parseInt(target.find('.event-container').css(
-          'marginTop'));
+        topCoord = target.find('.event-container').offset().top;
       }
       $('html, body').stop().animate({
         scrollTop: topCoord
@@ -66,7 +84,7 @@ function setModalImage(galleryModal, galleryImage) {
   modalCaptionElem.innerHTML = caption;
 }
 
-function initializeGallerySection() {
+function initGallerySectionEvents() {
   $('.section-gallery .gallery-img').on('click', function() {
     var galleryModal = $('#galleryModal');
     setModalImage(galleryModal, $(this));
@@ -121,7 +139,7 @@ function sendEmail(address, message) {
   });
 };
 
-function initializeContactSection() {
+function initContactSectionEvents() {
   $('#contact-form').submit(function(event) {
     var name = $('#contact-name');
     var email = $('#contact-email');
@@ -140,10 +158,15 @@ function initializeContactSection() {
   });
 };
 
+function initEvents() {
+  initBodyEvents();
+  initHeaderEvents();
+  initGallerySectionEvents();
+  initContactSectionEvents();
+};
+
 $(document)
   .ready(function() {
-    // loadGoogleAPI(googleMapsInfo.apiKey, googleMapsInfo.callback);
-    initializeHeader();
-    initializeGallerySection();
-    initializeContactSection();
+    loadGoogleAPI(googleMapsInfo.apiKey, googleMapsInfo.callback);
+    initEvents();
   });
