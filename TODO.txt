@@ -1,3 +1,0 @@
-all titles as heading tags
-change main imgs to jpeg because its smaller than png
-gallery html and css properly

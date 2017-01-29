@@ -26,8 +26,7 @@ function initMap() {
 };
 
 function loadGoogleAPI(apiKey, callback) {
-  var head = document.getElementsByTagName('head')
-    .item(0);
+  var head = document.getElementsByTagName('head').item(0);
   var script = document.createElement('script');
   script.setAttribute('type', 'text/javascript');
   script.setAttribute('src', 'https://maps.googleapis.com/maps/api/js?key=' +
