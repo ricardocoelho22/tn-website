@@ -7,22 +7,21 @@
           <div class="col-md-12 col-sm-4 info-section">
             <h2>Localização</h2>
             <p>Sporting Clube de Alenquer</p>
-            <p>Av. Jaime Ferreira</p>
-            <p>Morada 3</p>
+            <p>{{site.data.settings.address}}</p>
           </div>
           <div class="col-md-12 col-sm-4 info-section">
             <h2>Horário</h2>
-            <h6>Crianças</h6>
-            <p>Terça-feira: 19:00h - 19:45h</p>
-            <p>Quinta-feira: 19:00h - 19:45h</p>
-            <h6>Adultos</h6>
-            <p>Terça-feira: 19:45h - 21:15h</p>
-            <p>Quinta-feira: 19:45h - 21:15h</p>
+            {% for entry in site.data.settings.schedule %}
+              <h6>{{entry.division}}</h6>
+              {% for class in entry.classes %}
+                <p>{{class.day}}: {{class.time}}</p>
+              {% endfor %}
+            {% endfor %}
           </div>
           <div class="col-md-12 col-sm-4 info-section">
             <h2>Contacto</h2>
-            <p>Telefone: 999999999</p>
-            <p>Email: xxx@xxx.xxx</p>
+            <p>Telefone: {{site.data.settings.telephone}}</p>
+            <p>Email: {{site.data.settings.email}}</p>
             {% for social in site.data.settings.social %}
               <a href="{{social.url}}" target="_blank" class="{{social.name}}-icon">
                 <i class="fa fa-{{social.name}}-square"></i>
