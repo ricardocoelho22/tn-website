@@ -20,38 +20,29 @@
       </div>
       <div class="col-md-3 col-sm-4 footer-section">
         <h5>Horário</h5>
-        <h6>Crianças</h6>
-        <div class="schedule-entry">
-          <span>Terça-feira:</span>
-          <span>19:00h - 19:45h</span>
-        </div>
-        <div class="schedule-entry">
-          <span>Quinta-feira:</span>
-          <span>19:00h - 19:45h</span>
-        </div>
-        <h6>Adultos</h6>
-        <div class="schedule-entry">
-          <span>Terça-feira:</span>
-          <span>19:45h - 21:15h</span>
-        </div>
-        <div class="schedule-entry">
-          <span>Quinta-feira:</span>
-          <span>19:45h - 21:15h</span>
-        </div>
+        {% for entry in site.data.settings.schedule %}
+          <h6>{{entry.division}}</h6>
+          {% for class in entry.classes %}
+            <div class="schedule-entry">
+              <span>{{class.day}}:</span>
+              <span>{{class.time}}</span>
+            </div>
+          {% endfor %}
+        {% endfor %}
       </div>
       <div class="col-md-3 col-sm-3 footer-section">
         <h5>Contacto</h5>
         <div class="contact-line">
           <i class="fa fa-phone contact-icon"></i>
-          <span>xxx xxx xxx</span>
+          <span>{{site.data.settings.telephone}}</span>
         </div>
         <div class="contact-line">
           <i class="fa fa-envelope contact-icon"></i>
-          <span>xxx@xxx.xxx</span>
+          <span>{{site.data.settings.email}}</span>
         </div>
         <div class="contact-line">
           <i class="fa fa-map-marker contact-icon"></i>
-          <span>xxxxxxxxxxx</span>
+          <span>{{site.data.settings.address}}</span>
         </div>
         <div class="social-networks">
           {% for social in site.data.settings.social %}

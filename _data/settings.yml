@@ -5,20 +5,46 @@ title: Tigres Negros Taekwondo - Sporting Clube de Alenquer
 description: Website oficial do grupo Tigres Negros Taekwondo pertencente ao Sporting Clube de Alenquer
 
 logos:
-- {src: assets/img/logo-tn.png, alt: 'logo tigres negros'}
-- {src: assets/img/logo-sca.png, alt: 'logo sporting clube de alenquer'}
+  - src: assets/img/logo-tn.png
+    alt: 'logo tigres negros'
+  - src: assets/img/logo-sca.png
+    alt: 'logo sporting clube de alenquer'
 
 nav:
-- {name: Eventos, url: '#eventos'}
-- {name: Taekwondo, url: '#taekwondo'}
-- {name: Grupo, url: '#grupo'}
-- {name: Aulas, url: '#aulas'}
-- {name: Galeria, url: '#galeria'}
-- {name: Contacto, url: '#contacto'}
+  - name: Eventos
+    url: '#eventos'
+  - name: Taekwondo
+    url: '#taekwondo'
+  - name: Grupo
+    url: '#grupo'
+  - name: Aulas
+    url: '#aulas'
+  - name: Galeria
+    url: '#galeria'
+  - name: Contacto
+    url: '#contacto'
 
 social:
-- {name: facebook, url: 'https://pt-pt.facebook.com/tigresnegrostaekwondo/'}
+  - name: facebook
+    url: 'https://pt-pt.facebook.com/tigresnegrostaekwondo/'
 
+schedule:
+  - division: Crianças
+    classes:
+    - day: Terça-feira
+      time: '19:00h - 19:45h'
+    - day: Quinta-feira
+      time: '19:00h - 19:45h'
+  - division: Adultos
+    classes:
+    - day: Terça-feira
+      time: '19:45h - 21:15h'
+    - day: Quinta-feira
+      time: '19:45h - 21:15h'
+
+telephone: xxxxxxxxx
+email: ricardocoelho22@gmail.com
+address: Av. Jaime Ferreira
 
 #-------------------------------
 # About Section

@@ -11,10 +11,9 @@
       color: $gallery-modal-close-btn-color
       font-size: 2.8rem
       transition: 0.3s
-      opacity: 1
-      border: 2px solid white
+      border: 2px solid $gallery-modal-close-btn-border-color
       border-radius: 50%
-      background-color: $black
+      background-color: $gallery-modal-close-btn-bg-color
       width: 30px
       height: 30px
       text-align: center
@@ -28,28 +27,23 @@
       &:hover, &:focus 
         color: $gallery-modal-close-btn-highlight-color
         border-color: $gallery-modal-close-btn-highlight-color
-        text-decoration: none
-        cursor: pointer
 
     .modal-nav
-      color: $white
+      color: transparent
       border: none
       background-color: transparent
       outline: none
       font-weight: 700
       font-size: 3.0rem
-      opacity: 0
       transition: 0.3s
       width: 50px
       height: 100%
 
       &:hover
-        text-decoration: none
-        cursor: pointer
-        opacity: 1
+        color: $gallery-modal-nav-btn-color
 
       &:active
-        color: $gallery-modal-close-btn-highlight-color
+        color: $gallery-modal-nav-btn-highlight-color
 
     .nav-left
       position: absolute
