@@ -1,27 +1,16 @@
 <section class="section-classes" id="aulas">
   <div class="container">
     <div class="row">
-      <div class="col-sm-6 center-container">
-        <img src="assets/img/aula-kids.png" alt="aula para crianças">
+      {% assign columnSize = 12 | divided_by:site.data.settings.classes.size %}
+      {% for class in site.data.settings.classes %}
+      <div class="col-sm-{{columnSize}} center-container">
+        <img src="{{class.image.src}}" alt="{{class.image.alt}}">
         <div class="text-container">
-          <h2>Crianças</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum ducimus voluptatibus
-            error eveniet itaque nam, quaerat excepturi veritatis commodi quae nostrum
-            dignissimos, beatae consequatur, repellendus modi molestiae earum suscipit
-            odit.
-          </p>
+          <h2>{{class.type}}</h2>
+          <p>{{class.text}}</p>
         </div>
       </div>
-      <div class="col-sm-6 center-container">
-        <img src="assets/img/aula-adultos.png" alt="aula para adultos">
-        <div class="text-container">
-          <h2>Adultos</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni laborum
-            nulla dolorem, repellendus nostrum, officiis totam iste tempore, autem
-            voluptatem eaque esse accusantium! Cumque ea aperiam, minima dignissimos
-            quis repellendus?</p>
-        </div>
-      </div>
+      {% endfor %}
     </div>
   </div>
 </section>
