@@ -107,64 +107,33 @@ taekwondo:
     - src: 'assets/img/tkd-combate.png'
       alt: 'Combate de taekwondo'
 
-#-------------------------------
-# About Section
+events:
+  - image:
+      src: 'assets/img/poster-oitavo-workshop-tcsac.jpg'
+      alt: 'Poster oitavo workshop tcsac'
+    date:
+      day: '15'
+      month: Out
+    title: '8º Workshop de Taekwondo TCSAC'
+    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum soluta, deserunt totam architecto numquam vel quod impedit natus temporibus quaerat officia placeat, blanditiis fugiat doloremque. Officiis eligendi perspiciatis tenetur ipsam.'
+    link: 'https://www.facebook.com/events/1713277325593025/'
 
-# NOTE: The avatar is defined in the all.sass document.
+  - image:
+      src: 'assets/img/poster-curso-distrital-juizes-poomsaes.jpg'
+      alt: 'Poster curso distrital juizes poomsaes'
+    date:
+      day: '26'
+      month: Mai
+    title: 'Curso Distrital de Juizes de Poomsaes'
+    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum soluta, deserunt totam architecto numquam vel quod impedit natus temporibus quaerat officia placeat, blanditiis fugiat doloremque. Officiis eligendi perspiciatis tenetur ipsam.'
+    link: 'https://pt-pt.facebook.com/events/745766562231026/'
 
-# blurb: >
-#   **Travis specializes in making things** for human people.
-#   Most of the things he makes are [digital interfaces](http://travisneilson.com){:target="_blank"},
-#   but he also puts effort into crafting [next-level beats](http://soundcloud.com/travis-neilson){:target="_blank"}
-#   and [YouTube videos](http://youtube.com/user/devtipsfordesigners){:target="_blank"} about making codes happen.
-# skills:
-# - {name: Communication, value: '9'}
-# - {name: Organization, value: '7'}
-# - {name: Learning, value: '10'}
-# - {name: Teaching, value: '6'}
-# - {name: Planning, value: '7'}
-# - {name: Visual Design, value: '5'}
-# - {name: UX Design, value: '8'}
-# - {name: Programming, value: '6'}
-
-# #-------------------------------
-# # Work Section
-
-# projects:
-# - {name: TYPO International Design Talks, folder: 'proj-1', file: 'work/proj-1.html'}
-# - {name: City-IN website concept, folder: 'proj-2', file: 'work/proj-2.html'}
-# - {name: Crispy Icons, folder: 'proj-3', file: 'work/proj-3.html'}
-# - {name: Flat Mobile UI/UX Concept, folder: 'proj-4', file: 'work/proj-4.html'}
-# - {name: Fresh It Up, folder: 'proj-5', file: 'work/proj-5.html'}
-# - {name: Timeline Page, folder: 'proj-6', file: 'work/proj-6.html'}
-# - {name: Weather Dashboard, folder: 'proj-7', file: 'work/proj-7.html'}
-# - {name: Stripes & Co, folder: 'proj-8', file: 'work/proj-8.html'}
-
-
-
-
-# #-------------------------------
-# # Clients Section
-
-# clients:
-# - {avatar: 'face-aaroni.jpg',
-#   name: 'Scott Summers',
-#   title: 'Director of Design, OnToText Ind.',
-#   quote: '<p><strong>While we all felt that Travis was a great</strong> asset to our team — and really worked hard to understand our products from the point of view of the customer — we also all agree he should shower more often.</p>',
-#   logo: 'logo1.png'}
-# - {avatar: 'face-atariboy.jpg',
-#   name: 'Hank McCoy',
-#   title: 'Eater of Salad, Antartica Int.',
-#   quote: '<p><strong>Working with Travis was the highlight of my career.</strong> Other moments of note were collecting the largest number of paperclips in the office, and winning a trophy for saying "uh huh, and then what?" 30 times in a row to my girlfriend without her noticing.</p>',
-#   logo: 'logo2.png'}
-# - {avatar: 'face-jackiesaik.jpg',
-#   name: 'Stacy Lang',
-#   title: 'Social Media Girl, Quebec Int.',
-#   quote: '<p><strong>Yea, I guess hes good at computers or something,</strong> but let me ask you this: If a cat always lands on its feet, and buttered bread always lands butter side down, what would happen if you tied buttered bread on top of a cat?</p>',
-#   logo: 'logo3.png'}
-# - {avatar: 'face-teleject.jpg',
-#   name: 'Cleatus Cassidy',
-#   title: 'VP of Helmut, Lorem Sorem LLC.',
-#   quote: '<p><strong>Back in old country</strong> only nerds who is playing on computers. Now all bros is wanting to make codes and junk. I lost foot in war. You dont see girls asking me about homework.</p>',
-#   logo: 'logo4.png'}
-
+  - image:
+      src: 'assets/img/poster-iv-open-internacional-sintra.jpg'
+      alt: 'Poster iv open internacional sintra'
+    date:
+      day: '07'
+      month: Mai
+    title: 'IV Open Internacional de Sintra'
+    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum soluta, deserunt totam architecto numquam vel quod impedit natus temporibus quaerat officia placeat, blanditiis fugiat doloremque. Officiis eligendi perspiciatis tenetur ipsam.'
+    link: 'https://pt-pt.facebook.com/events/745766562231026/'

@@ -1,69 +1,25 @@
 <section class="section-events" id="eventos">
   <div class="container">
     <div class="row">
-      <div class="col-sm-4 event-container center-container">
+    {% assign columnSize = 12 | divided_by: site.data.settings.events.size  %}
+    {% for event in site.data.settings.events %}
+      <div class="col-sm-{{columnSize}} event-container center-container">
         <div class="event-header">
-          <img src="assets/img/poster-oitavo-workshop-tcsac.jpg" alt="poster oitavo workshop tcsac">
+          <img src="{{event.image.src}}" alt="{{event.image.alt}}">
           <div class="event-date">
-            <span class="event-day">15</span>
-            <span class="event-month">Out</span>
+            <span class="event-day">{{event.date.day}}</span>
+            <span class="event-month">{{event.date.month}}</span>
           </div>
         </div>
         <div class="event-body">
-          <h4 class="event-title">8º Workshop de Taekwondo TCSAC</h4>
-          <p class="event-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum soluta,
-            deserunt totam architecto numquam vel quod impedit natus temporibus quaerat
-            officia placeat, blanditiis fugiat doloremque. Officiis eligendi perspiciatis
-            tenetur ipsam.</p>
+          <h4 class="event-title">{{event.title}}</h4>
+          <p class="event-description">{{event.description}}</p>
           <button class="main-button event-button">
-            Mais
+            <a href="{{event.link}}">Mais</a>
           </button>
         </div>
       </div>
-
-      <div class="col-sm-4 event-container center-container">
-        <div class="event-header">
-          <img src="assets/img/poster-curso-distrital-juizes-poomsaes.jpg" alt="poster-curso-distrital-juizes-poomsaes">
-          <div class="event-date">
-            <span class="event-day">26</span>
-            <span class="event-month">Mai</span>
-          </div>
-        </div>
-        <div class="event-body">
-          <h4 class="event-title">Curso Distrital de Juizes de Poomsaes</h4>
-          <p class="event-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores numquam
-            autem eum quod, amet, atque alias nemo labore aliquid quae, illum eaque
-            harum aut velit necessitatibus qui ducimus at ipsum. Lorem ipsum dolor
-            sit amet, consectetur adipisicing elit. Ea doloribus debitis vero reprehenderit
-            facere earum, recusandae. Quas laudantium totam sit reprehenderit repudiandae
-            provident, voluptates est, voluptatibus ex, perferendis consequuntur.
-            Dolor!
-          </p>
-          <button class="main-button event-button">
-            Mais
-          </button>
-        </div>
-
-      </div>
-      <div class="col-sm-4 event-container center-container">
-        <div class="event-header">
-          <img src="assets/img/poster-iv-open-internacional-sintra.jpg" alt="poster-iv-open-internacional-sintra">
-          <div class="event-date">
-            <span class="event-day">07</span>
-            <span class="event-month">Mai</span>
-          </div>
-        </div>
-        <div class="event-body">
-          <h4 class="event-title">IV Open Internacional de Sintra</h4>
-          <p class="event-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt, dignissimos,
-            quia. Maxime, recusandae voluptatem aperiam labore temporibus dolore.
-            Nisi inventore, explicabo eligendi aspernatur totam, aperiam ratione
-            ipsa nostrum natus cum.</p>
-          <button class="main-button event-button">
-            Mais
-          </button>
-        </div>
-      </div>
+    {% endfor %}
     </div>
   </div>
 </section>
