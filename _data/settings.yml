@@ -5,9 +5,9 @@ title: Tigres Negros Taekwondo - Sporting Clube de Alenquer
 description: Website oficial do grupo Tigres Negros Taekwondo pertencente ao Sporting Clube de Alenquer
 
 logos:
-  - src: assets/img/logo-tn.png
+  - src: 'assets/img/logo-tn.png'
     alt: 'logo tigres negros'
-  - src: assets/img/logo-sca.png
+  - src: 'assets/img/logo-sca.png'
     alt: 'logo sporting clube de alenquer'
 
 nav:
@@ -43,8 +43,36 @@ schedule:
       time: '19:45h - 21:15h'
 
 telephone: '999 999 999'
-email: ricardocoelho22@gmail.com
-address: Av. Jaime Ferreira
+email: 'ricardocoelho22@gmail.com'
+address: 'Av. Jaime Ferreira'
+
+googleMapsAPIKey: 'AIzaSyCTYZoDbk3_Vc5t8uBKRMGR6UhjkjKgpWY'
+
+galleryImages:
+  - full: 'assets/img/gallery/img-1.jpg'
+    thumbnail: 'assets/img/gallery/img-1.jpg'
+    caption: Legenda
+  - full: 'assets/img/gallery/img-2.jpg' 
+    thumbnail: 'assets/img/gallery/img-2.jpg'
+    caption: Legenda
+  - full: 'assets/img/gallery/img-3.jpg'
+    thumbnail: 'assets/img/gallery/img-3.jpg'
+    caption: Legenda
+  - full: 'assets/img/gallery/img-4.jpg'
+    thumbnail: 'assets/img/gallery/img-4.jpg'
+    caption: Legenda
+  - full: 'assets/img/gallery/img-6.jpg'
+    thumbnail: 'assets/img/gallery/img-6.jpg'
+    caption: Legenda
+  - full: 'assets/img/gallery/img-6.jpg'
+    thumbnail: 'assets/img/gallery/img-6.jpg'
+    caption: Legenda
+  - full: 'assets/img/gallery/img-7.jpg'
+    thumbnail: 'assets/img/gallery/img-7.jpg'
+    caption: Legenda
+  - full: 'assets/img/gallery/img-8.jpg'
+    thumbnail: 'assets/img/gallery/img-8.jpg'
+    caption: Legenda
 
 #-------------------------------
 # About Section
