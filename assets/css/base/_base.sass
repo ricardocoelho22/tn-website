@@ -19,6 +19,7 @@ body
 
   &:hover, &:focus
     background-color: $btn-bg-highlight-color
+    -webkit-transition-duration: 0.2s
     transition-duration: 0.2s
 
   &:active
@@ -81,16 +82,17 @@ p
   width: 50px
   height: 50px
   font-size: 2.4rem
+  -webkit-transition: 0.3s
   transition: 0.3s
   opacity: 0.5
   border: 2px solid $btn-border-color
   border-radius: 50%
-  outline: none
   color: $btn-text-color
   background-color: $btn-bg-color
 
   &:hover, &:focus
     opacity: 1
+    outline: none
 
   &:active
     background-color: $btn-bg-active-color
