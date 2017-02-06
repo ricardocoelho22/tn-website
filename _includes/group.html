@@ -2,12 +2,12 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-6 col-sm-push-6">
-        <h3>{{site.data.settings.group.subtitle}}</h3>
-        <h1>{{site.data.settings.group.title}}</h1>
-        <p>{{site.data.settings.group.text}}</p>
+        <h3>{{site.data.info.group.subtitle}}</h3>
+        <h1>{{site.data.info.group.title}}</h1>
+        <p>{{site.data.info.group.text}}</p>
       </div>
       <div class="col-sm-6 col-sm-pull-6 center-container">
-      {% for image in site.data.settings.group.images %}
+      {% for image in site.data.info.group.images %}
         <img src="{{image.src}}" alt="{{image.alt}}">
       {% endfor %}
       </div>

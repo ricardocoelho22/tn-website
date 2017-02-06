@@ -95,10 +95,10 @@ function initGallerySectionEvents() {
   $('.section-gallery *[id^=gallery_img-]').on('click', function() {
     var galleryModal = $('#galleryModal');
     var imgIndex = getImageIndex($(this));
-    var imageData = siteData.settings.galleryImages[imgIndex];
+    var imageData = siteData.info.galleryImages[imgIndex];
     setModalImage(galleryModal, imageData);
     galleryModal.find('.nav-left').toggle(imgIndex > 0);
-    galleryModal.find('.nav-right').toggle(imgIndex < siteData.settings.galleryImages.length-1);
+    galleryModal.find('.nav-right').toggle(imgIndex < siteData.info.galleryImages.length-1);
     galleryInfo.currentModalImageIndex = imgIndex;
     galleryModal.modal();
   });
@@ -108,7 +108,7 @@ function initGallerySectionEvents() {
     if (currentImgIndex > 0) {
       var galleryModal = $('#galleryModal');
       var newImgIndex = currentImgIndex - 1;
-      var imageData = siteData.settings.galleryImages[newImgIndex];
+      var imageData = siteData.info.galleryImages[newImgIndex];
       setModalImage(galleryModal, imageData);
       galleryModal.find('.nav-left').toggle(newImgIndex > 0);
       galleryModal.find('.nav-right').toggle(true);
@@ -118,13 +118,13 @@ function initGallerySectionEvents() {
 
   $('.nav-right').on('click', function() {
     var currentImgIndex = galleryInfo.currentModalImageIndex;
-    if (currentImgIndex < siteData.settings.galleryImages.length-1) {
+    if (currentImgIndex < siteData.info.galleryImages.length-1) {
       var galleryModal = $('#galleryModal');
       var newImgIndex = currentImgIndex + 1;
-      var imageData = siteData.settings.galleryImages[newImgIndex];
+      var imageData = siteData.info.galleryImages[newImgIndex];
       setModalImage(galleryModal, imageData);
       galleryModal.find('.nav-left').toggle(true);
-      galleryModal.find('.nav-right').toggle(newImgIndex < siteData.settings.galleryImages.length-1);
+      galleryModal.find('.nav-right').toggle(newImgIndex < siteData.info.galleryImages.length-1);
       galleryInfo.currentModalImageIndex = newImgIndex;
     }
   });
@@ -160,7 +160,7 @@ function initContactSectionEvents() {
     var message = $('#contact-message');
     event.preventDefault();
     if (isMessageValid(name, email, subject, message)) {
-      sendEmail(siteData.settings.address, $('#contact-form').serialize());
+      sendEmail(siteData.info.email, $('#contact-form').serialize());
     } else {
       $('#message-invalid-alert').show();
     }

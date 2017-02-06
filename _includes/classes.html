@@ -1,8 +1,8 @@
 <section class="section-classes" id="aulas">
   <div class="container">
     <div class="row">
-      {% assign columnSize = 12 | divided_by:site.data.settings.classes.size %}
-      {% for class in site.data.settings.classes %}
+      {% assign columnSize = 12 | divided_by:site.data.info.classes.size %}
+      {% for class in site.data.info.classes %}
       <div class="col-sm-{{columnSize}} center-container">
         <img src="{{class.image.src}}" alt="{{class.image.alt}}">
         <div class="text-container">
