@@ -15,10 +15,12 @@
     h6
       margin-top: 10px
 
-    .facebook-icon
+    a[class$="-icon"]
       font-size: 2.0rem
-      color: $facebook-color
       text-decoration: none
+
+    .facebook-icon
+      color: $facebook-color
 
   .message-form
     margin-top: 30px
@@ -35,7 +37,6 @@
       padding: 10px
 
       &:focus
-        outline: 0
         border-color: $contact-input-border-highlight-color
         box-shadow: 0 0 8px $contact-input-border-highlight-shadow-color
 
