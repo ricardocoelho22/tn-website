@@ -30,7 +30,7 @@
           </div>
         </div>
       </div>
-      <form class="col-md-8 col-sm-12 message-form" id="contact-form" method="post" action="//formspree.io/ricardocoelho22@gmail.com">
+      <form class="col-md-8 col-sm-12 message-form" id="contact-form">
         <h2>Envie-nos uma mensagem!</h2>
         <div class="row">
           <div class="col-sm-6">
@@ -51,14 +51,14 @@
         <label for="subject">
           Assunto
         </label>
-        <input type="text" id="contact-subject" name="_subject" title="Assunto da mensagem"
+        <input type="text" id="contact-subject" name="*subject" title="Assunto da mensagem"
           placeholder="Assunto" required>
         <label for="message">
           Mensagem
         </label>
         <textarea id="contact-message" name="message" title="Mensagem a enviar" placeholder="Mensagem"
           required></textarea>
-        <input type="text" name="_gotcha" style="display:none" />
+        <input type="hidden" name="*honeypot"/>
         <button class="main-button" type="submit">Enviar</button>
       </form>
 
@@ -69,6 +69,7 @@
         Por favor, preencha todos os campos.
       </div>
     </div>
+    
     <div class="modal fade" id="sendSuccessModal" tabindex="-1" role="dialog" aria-labelledby="sendSuccessModalHeader">
       <div class="modal-dialog modal-success" role="document">
         <div class="modal-content">
