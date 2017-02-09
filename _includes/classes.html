@@ -6,8 +6,8 @@
       <div class="col-sm-{{columnSize}} center-container">
         <img src="{{class.image.src}}" alt="{{class.image.alt}}">
         <div class="text-container">
-          <h2>{{class.type}}</h2>
-          <p>{{class.text}}</p>
+          {% capture class-text%}{% include partials/class-{{class.type}}-text.md %}{% endcapture %}
+          {{class-text | markdownify}}
         </div>
       </div>
       {% endfor %}

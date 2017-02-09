@@ -2,14 +2,13 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-6 col-sm-push-6">
-        <h3>{{site.data.info.group.subtitle}}</h3>
-        <h1>{{site.data.info.group.title}}</h1>
-        <p>{{site.data.info.group.text}}</p>
+        {% capture group-text%}{% include partials/group-text.md %}{% endcapture %} 
+        {{group-text | markdownify}}
       </div>
       <div class="col-sm-6 col-sm-pull-6 center-container">
-      {% for image in site.data.info.group.images %}
-        <img src="{{image.src}}" alt="{{image.alt}}">
-      {% endfor %}
+        {% for image in site.data.info.group.images %}
+          <img src="{{image.src}}" alt="{{image.alt}}"> 
+        {% endfor %}
       </div>
     </div>
   </div>
