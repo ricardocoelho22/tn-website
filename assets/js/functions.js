@@ -139,32 +139,33 @@ function isMessageValid(name, email, subject, message) {
 function sendEmail(address, message) {
   $.ajax({
     method: 'POST',
-    url: 'https://formspree.io/' + address,
+    url: 'https://formspree.io/ricardocoelho22@gmail.com',
     data: message,
-    datatype: 'json',
-    complete: function(jqXHR) {
-      if (jqXHR.readyState == 0 && jqXHR.status == 0) {
-        $('#contact-form').get(0).reset();
-        $('#sendSuccessModal').modal();
-      } else {
-        $('#sendFailModal').modal();
-      }
-    }
+    datatype: 'json'
+    // complete: function(jqXHR) {
+    //   console.log(jqXHR);
+    //   if (jqXHR.readyState == 0 && jqXHR.status == 0) {
+    //     $('#contact-form').get(0).reset();
+    //     $('#sendSuccessModal').modal();
+    //   } else {
+    //     $('#sendFailModal').modal();
+    //   }
+    // }
   });
 };
 
 function initContactSectionEvents() {
   $('#contact-form').submit(function(event) {
-    var name = $('#contact-name');
-    var email = $('#contact-email');
-    var subject = $('#contact-subject');
-    var message = $('#contact-message');
-    event.preventDefault();
-    if (isMessageValid(name, email, subject, message)) {
+    // var name = $('#contact-name');
+    // var email = $('#contact-email');
+    // var subject = $('#contact-subject');
+    // var message = $('#contact-message');
+    // event.preventDefault();
+    // if (isMessageValid(name, email, subject, message)) {
       sendEmail(siteData.info.email, $('#contact-form').serialize());
-    } else {
-      $('#message-invalid-alert').show();
-    }
+    // } else {
+    //   $('#message-invalid-alert').show();
+    // }
   });
 
   $('.alert-close').on('click', function() {
@@ -189,6 +190,6 @@ function initEvents() {
 
 $(document)
   .ready(function() {
-    loadGoogleAPI();
+    // loadGoogleAPI();
     initEvents();
   });
