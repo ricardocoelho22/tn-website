@@ -162,7 +162,7 @@ function initContactSectionEvents() {
     // var message = $('#contact-message');
     // event.preventDefault();
     // if (isMessageValid(name, email, subject, message)) {
-      sendEmail(siteData.info.email, $('#contact-form').serialize());
+      // sendEmail(siteData.info.email, $('#contact-form').serialize());
     // } else {
     //   $('#message-invalid-alert').show();
     // }
