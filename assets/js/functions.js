@@ -188,6 +188,6 @@ function initEvents() {
 
 $(document)
   .ready(function() {
-    // loadGoogleAPI();
+    loadGoogleAPI();
     initEvents();
   });

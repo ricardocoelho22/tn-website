@@ -10,3 +10,6 @@ sass:
   style: :nested
 
 gems: [jekyll-sitemap]
+
+collections:
+  - events

@@ -22,37 +22,6 @@ schedule:
     - day: Quinta-feira
       time: '19:45h - 21:15h'
 
-events:
-  - image:
-      src: 'assets/img/events/poster-oitavo-workshop-tcsac.jpg'
-      alt: 'Poster oitavo workshop tcsac'
-    date:
-      day: '15'
-      month: Out
-    title: '8º Workshop de Taekwondo TCSAC'
-    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum soluta, deserunt totam architecto numquam vel quod impedit natus temporibus quaerat officia placeat, blanditiis fugiat doloremque. Officiis eligendi perspiciatis tenetur ipsam.'
-    link: 'https://www.facebook.com/events/1713277325593025/'
-
-  - image:
-      src: 'assets/img/events/poster-curso-distrital-juizes-poomsaes.jpg'
-      alt: 'Poster curso distrital juizes poomsaes'
-    date:
-      day: '26'
-      month: Mai
-    title: 'Curso Distrital de Juizes de Poomsaes'
-    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum soluta, deserunt totam architecto numquam vel quod impedit natus temporibus quaerat officia placeat, blanditiis fugiat doloremque. Officiis eligendi perspiciatis tenetur ipsam.'
-    link: 'https://pt-pt.facebook.com/events/745766562231026/'
-
-  - image:
-      src: 'assets/img/events/poster-iv-open-internacional-sintra.jpg'
-      alt: 'Poster iv open internacional sintra'
-    date:
-      day: '07'
-      month: Mai
-    title: 'IV Open Internacional de Sintra'
-    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum soluta, deserunt totam architecto numquam vel quod impedit natus temporibus quaerat officia placeat, blanditiis fugiat doloremque. Officiis eligendi perspiciatis tenetur ipsam.'
-    link: 'https://pt-pt.facebook.com/events/745766562231026/'
-
 galleryImages:
   - full: 'assets/img/gallery/img-1.jpg'
     thumbnail: 'assets/img/gallery/img-1-thumbnail.jpg'
