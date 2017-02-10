@@ -1,10 +1,10 @@
 ---
 ---
 /*get data from liquid*/
-var siteData = {{site.data | jsonify}}
+var siteDataSettings = {{site.data.settings | jsonify}}
 
 var googleMapsInfo = {
-  apiKey: siteData.settings.googleMapsAPIKey,
+  apiKey: siteDataSettings.googleMapsAPIKey,
   callback: 'initMap',
   coordSCA: { lat: 39.056272, lng: -9.006574 },
   coordTitle: 'Sporting Clube de Alenquer'
@@ -96,10 +96,10 @@ function initGallerySectionEvents() {
   $('.section-gallery *[id^=gallery_img-]').on('click', function() {
     var galleryModal = $('#galleryModal');
     var imgIndex = getImageIndex($(this));
-    var imageData = siteData.info.galleryImages[imgIndex];
+    var imageData = siteDataSettings.galleryImages[imgIndex];
     setModalImage(galleryModal, imageData);
     galleryModal.find('.nav-left').toggle(imgIndex > 0);
-    galleryModal.find('.nav-right').toggle(imgIndex < siteData.info.galleryImages.length-1);
+    galleryModal.find('.nav-right').toggle(imgIndex < siteDataSettings.galleryImages.length-1);
     galleryInfo.currentModalImageIndex = imgIndex;
     galleryModal.modal();
   });
@@ -109,7 +109,7 @@ function initGallerySectionEvents() {
     if (currentImgIndex > 0) {
       var galleryModal = $('#galleryModal');
       var newImgIndex = currentImgIndex - 1;
-      var imageData = siteData.info.galleryImages[newImgIndex];
+      var imageData = siteDataSettings.galleryImages[newImgIndex];
       setModalImage(galleryModal, imageData);
       galleryModal.find('.nav-left').toggle(newImgIndex > 0);
       galleryModal.find('.nav-right').toggle(true);
@@ -119,13 +119,13 @@ function initGallerySectionEvents() {
 
   $('.nav-right').on('click', function() {
     var currentImgIndex = galleryInfo.currentModalImageIndex;
-    if (currentImgIndex < siteData.info.galleryImages.length-1) {
+    if (currentImgIndex < siteDataSettings.galleryImages.length-1) {
       var galleryModal = $('#galleryModal');
       var newImgIndex = currentImgIndex + 1;
-      var imageData = siteData.info.galleryImages[newImgIndex];
+      var imageData = siteDataSettings.galleryImages[newImgIndex];
       setModalImage(galleryModal, imageData);
       galleryModal.find('.nav-left').toggle(true);
-      galleryModal.find('.nav-right').toggle(newImgIndex < siteData.info.galleryImages.length-1);
+      galleryModal.find('.nav-right').toggle(newImgIndex < siteDataSettings.galleryImages.length-1);
       galleryInfo.currentModalImageIndex = newImgIndex;
     }
   });
@@ -136,10 +136,10 @@ function isMessageValid(name, email, subject, message) {
     message.val() != "";
 };
 
-function sendEmail(address, message) {
+function sendEmail(emailToken, message) {
   $.ajax({
     method: 'POST',
-    url: 'https://www.enformed.io/o9u1zkft',
+    url: 'https://www.enformed.io/' + emailToken,
     data: message,
     datatype: 'json',
     success: function(){
@@ -160,7 +160,7 @@ function initContactSectionEvents() {
     var message = $('#contact-message');
     event.preventDefault();
     if (isMessageValid(name, email, subject, message)) {
-      sendEmail(siteData.info.email, $('#contact-form').serialize());
+      sendEmail(siteDataSettings.emailToken, $('#contact-form').serialize());
     } else {
       $('#message-invalid-alert').show();
     }

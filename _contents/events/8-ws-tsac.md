@@ -1,6 +1,8 @@
 ---
-link: 'https://www.facebook.com/events/1713277325593025/'
+category: event
 date: 2016-10-15
+
+link: 'https://www.facebook.com/events/1713277325593025/'
 day: '15'
 month: 'Out'
 image:

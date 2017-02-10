@@ -7,11 +7,11 @@
           <div class="col-md-12 col-sm-4 info-section">
             <h2>Localização</h2>
             <p>Sporting Clube de Alenquer</p>
-            <p>{{site.data.info.address}}</p>
+            <p>{{site.data.settings.address}}</p>
           </div>
           <div class="col-md-12 col-sm-4 info-section">
             <h2>Horário</h2>
-            {% for entry in site.data.info.schedule %}
+            {% for entry in site.data.settings.schedule %}
               <h6>{{entry.division}}</h6>
               {% for class in entry.classes %}
                 <p>{{class.day}}: {{class.time}}</p>
@@ -20,9 +20,9 @@
           </div>
           <div class="col-md-12 col-sm-4 info-section">
             <h2>Contacto</h2>
-            <p>Telefone: {{site.data.info.telephone}}</p>
-            <p>Email: {{site.data.info.email}}</p>
-            {% for social in site.data.info.social %}
+            <p>Telefone: {{site.data.settings.telephone}}</p>
+            <p>Email: {{site.data.settings.email}}</p>
+            {% for social in site.data.settings.social %}
               <a href="{{social.url}}" target="_blank" class="{{social.name}}-icon">
                 <i class="fa fa-{{social.name}}-square"></i>
               </a>

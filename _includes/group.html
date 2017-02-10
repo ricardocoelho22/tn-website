@@ -1,12 +1,12 @@
 <section class="section-group" id="grupo">
   <div class="container">
     <div class="row">
+      {% assign group-content = site.contents | where:"section", "group" | first %}
       <div class="col-sm-6 col-sm-push-6">
-        {% capture group-text%}{% include partials/group-text.md %}{% endcapture %} 
-        {{group-text | markdownify}}
+        {{group-content.content}}
       </div>
       <div class="col-sm-6 col-sm-pull-6 center-container">
-        {% for image in site.data.info.group.images %}
+        {% for image in group-content.images %}
           <img src="{{image.src}}" alt="{{image.alt}}"> 
         {% endfor %}
       </div>

@@ -1,3 +1,12 @@
+---
+section: 'group'
+images:
+  - src: 'assets/img/foto-grupo.jpg'
+    alt: 'Foto do grupo'
+  - src: 'assets/img/dojang.jpg'
+    alt: 'Foto do dojang'
+---
+
 ### O Grupo
 
 # Tigres Negros

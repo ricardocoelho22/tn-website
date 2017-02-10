@@ -1,15 +1,68 @@
 #-------------------------------
 # General Site Settings
 
-title: Tigres Negros Taekwondo - Sporting Clube de Alenquer
+address: 'Av. Jaime Ferreira'
 
-description: Website oficial do grupo Tigres Negros Taekwondo pertencente ao Sporting Clube de Alenquer
+telephone: '999 999 999'
+
+email: 'ricardocoelho22@gmail.com'
 
 logos:
   - src: 'assets/img/logo-tn.png'
     alt: 'logo tigres negros'
   - src: 'assets/img/logo-sca.png'
     alt: 'logo sporting clube de alenquer'
+
+social:
+  - name: facebook
+    url: 'https://pt-pt.facebook.com/tigresnegrostaekwondo/'
+
+schedule:
+  - division: Crianças
+    classes:
+    - day: Terça-feira
+      time: '19:00h - 19:45h'
+    - day: Quinta-feira
+      time: '19:00h - 19:45h'
+  - division: Adultos
+    classes:
+    - day: Terça-feira
+      time: '19:45h - 21:15h'
+    - day: Quinta-feira
+      time: '19:45h - 21:15h'
+
+galleryImages:
+  - full: 'assets/img/gallery/img-1.jpg'
+    thumbnail: 'assets/img/gallery/img-1-thumbnail.jpg'
+    caption: Legenda
+  - full: 'assets/img/gallery/img-2.jpg' 
+    thumbnail: 'assets/img/gallery/img-2-thumbnail.jpg'
+    caption: Legenda
+  - full: 'assets/img/gallery/img-3.jpg'
+    thumbnail: 'assets/img/gallery/img-3-thumbnail.jpg'
+    caption: Legenda
+  - full: 'assets/img/gallery/img-4.jpg'
+    thumbnail: 'assets/img/gallery/img-4-thumbnail.jpg'
+    caption: Legenda
+  - full: 'assets/img/gallery/img-5.jpg'
+    thumbnail: 'assets/img/gallery/img-5-thumbnail.jpg'
+    caption: Legenda
+  - full: 'assets/img/gallery/img-6.jpg'
+    thumbnail: 'assets/img/gallery/img-6-thumbnail.jpg'
+    caption: Legenda
+  - full: 'assets/img/gallery/img-7.jpg'
+    thumbnail: 'assets/img/gallery/img-7-thumbnail.jpg'
+    caption: Legenda
+  - full: 'assets/img/gallery/img-8.jpg'
+    thumbnail: 'assets/img/gallery/img-8-thumbnail.jpg'
+    caption: Legenda
+
+#-------------------------------
+# Page Settings
+
+title: Tigres Negros Taekwondo - Sporting Clube de Alenquer
+
+description: Website oficial do grupo Tigres Negros Taekwondo pertencente ao Sporting Clube de Alenquer
 
 nav:
   - name: Eventos
@@ -24,5 +77,10 @@ nav:
     url: '#galeria'
   - name: Contacto
     url: '#contacto'
+    
+#-------------------------------
+# API's settings
 
 googleMapsAPIKey: 'AIzaSyCTYZoDbk3_Vc5t8uBKRMGR6UhjkjKgpWY'
+
+emailToken: 'o9u1zkft'

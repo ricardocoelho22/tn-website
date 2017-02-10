@@ -1,14 +1,14 @@
 <section class="section-tkd" id="taekwondo">
   <div class="container">
     <div class="row">
+      {% assign taekwondo-content = site.contents | where:"section", "taekwondo" | first %}
       <div class="col-sm-6">
-        {% capture taekwondo-text%}{% include partials/taekwondo-text.md %}{% endcapture %}
-        {{taekwondo-text | markdownify}}
+        {{taekwondo-content.content}}
       </div>
       <div class="col-sm-6 center-container">
-      {% for image in site.data.info.taekwondo.images %}
-        <img src="{{image.src}}" alt="{{image.alt}}">
-      {% endfor %}
+        {% for image in taekwondo-content.images %}
+          <img src="{{image.src}}" alt="{{image.alt}}">
+        {% endfor %}
       </div>
     </div>
   </div>

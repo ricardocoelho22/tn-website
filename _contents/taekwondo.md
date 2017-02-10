@@ -1,3 +1,12 @@
+---
+section: 'taekwondo'
+images:
+  - src: 'assets/img/tkd-treino.jpg'
+    alt: 'Treino de taekwondo'
+  - src: 'assets/img/tkd-combate.jpg'
+    alt: 'Combate de taekwondo'
+---
+
 ### Arte Marcial
 
 # Taekwondo
