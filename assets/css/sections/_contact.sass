@@ -48,11 +48,10 @@
       overflow-y: auto
       resize: none
       word-wrap: break-word
-
-    label, button
-      margin-top: 15px
+      margin-bottom: 15px
 
     label
+      margin-top: 15px
       color: $text-color
 
       &.error
@@ -60,17 +59,20 @@
         color: $contact-label-error-color
 
     .sending-alert
-      margin-top: 15px
-      margin-bottom: 0
-      padding: 15px
       background-color: $dark-gray
       text-align: center
       color: $white
       font-size: 1.8rem
       border-radius: 3px
-      border: none
-      display: none
+      max-height: 0
+      overflow-y: hidden
 
+      img, span
+        display: block
+        margin: auto
+
+    button[disabled=disabled], button:disabled
+      background-color: $light-gray
 
   .modal button
     margin: 0

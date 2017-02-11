@@ -131,6 +131,16 @@ function initGallerySectionEvents() {
   });
 };
 
+function showSendingEmailAlert(form){
+  $(form).find('.sending-alert').animate({maxHeight: '100px', padding: '15px'}, {queue: false});
+  $(form).find('*[type="submit"]').animate({marginTop: '15px'}, {queue: false});
+};
+
+function hideSendingEmailAlert(form){
+  $(form).find('.sending-alert').animate({maxHeight: '0px', padding: '0px'}, {queue: false});
+  $(form).find('*[type="submit"]').animate({marginTop: '0px'}, {queue: false});
+}
+
 function sendEmail(emailToken, message, success, fail) {
   // $.ajax({
   //   method: 'POST',
@@ -172,13 +182,15 @@ function initContactSectionEvents() {
     },
     submitHandler: function(form, event){
       event.preventDefault();
-      $('.sending-alert').fadeIn();
+      showSendingEmailAlert(form);
+      $(form).find('*[type="submit"]').prop('disabled', true);
       sendEmail(siteDataSettings.emailToken, $(form).serialize(), 
         function(){
+          hideSendingEmailAlert(form);
+          $('#sendSuccessModal').modal();
           $(form).get(0).reset();
           $(form).find('.valid').removeClass('valid');
-          $('.sending-alert').fadeOut();
-          $('#sendSuccessModal').modal();
+          $(form).find('*[type="submit"]').prop('disabled', false);
       },
         function(){
           $('#sendFailModal').modal();
