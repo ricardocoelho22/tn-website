@@ -29,16 +29,19 @@
       text-align: center
     
     input, textarea
-      border: 2px solid $contact-input-border-color
+      border: 2px solid $contact-field-border-color
       border-radius: 3px
       color: $text-color
       width: 100%
       font-size: 1.6rem
       padding: 10px
+      background-color: transparent
 
       &:focus
-        border-color: $contact-input-border-highlight-color
-        box-shadow: 0 0 8px $contact-input-border-highlight-shadow-color
+        box-shadow: 0 0 8px $contact-field-shadow-color
+
+      &.valid
+        border-color: $contact-field-border-success-color
 
     textarea
       height: 180px
@@ -52,13 +55,25 @@
     label
       color: $text-color
 
-  .modal button, .alert button
-    margin: 0
+      &.error
+        margin-top: 0
+        color: $contact-label-error-color
 
-  .alert
-    margin-top: 15px
-    font-size: 1.8rem
-    display: none
+    .sending-alert
+      margin-top: 15px
+      margin-bottom: 0
+      padding: 15px
+      background-color: $dark-gray
+      text-align: center
+      color: $white
+      font-size: 1.8rem
+      border-radius: 3px
+      border: none
+      display: none
+
+
+  .modal button
+    margin: 0
 
   .modal .modal-success .modal-content
     border-color: $contact-modal-success-border-color

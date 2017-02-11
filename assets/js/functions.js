@@ -131,44 +131,61 @@ function initGallerySectionEvents() {
   });
 };
 
-function isMessageValid(name, email, subject, message) {
-  return name.val() != "" && email.val() != "" && subject.val() != "" &&
-    message.val() != "";
-};
+function sendEmail(emailToken, message, success, fail) {
+  // $.ajax({
+  //   method: 'POST',
+  //   url: 'https://www.enformed.io/' + emailToken,
+  //   data: message,
+  //   datatype: 'json',
+  //   success: function(){
+  //     $('#contact-form').get(0).reset();
+  //     $('#sendSuccessModal').modal();
+  //   },
+  //   error: function(){
+  //     $('#sendFailModal').modal();
+  //   }
+  // });
+  console.log('sent email to ' + 'https://www.enformed.io/' + emailToken + ' with message ' + message);
 
-function sendEmail(emailToken, message) {
-  $.ajax({
-    method: 'POST',
-    url: 'https://www.enformed.io/' + emailToken,
-    data: message,
-    datatype: 'json',
-    success: function(){
-      $('#contact-form').get(0).reset();
-      $('#sendSuccessModal').modal();
-    },
-    error: function(){
-      $('#sendFailModal').modal();
-    }
-  });
+  success.call();
 };
 
 function initContactSectionEvents() {
-  $('#contact-form').submit(function(event) {
-    var name = $('#contact-name');
-    var email = $('#contact-email');
-    var subject = $('#contact-subject');
-    var message = $('#contact-message');
-    event.preventDefault();
-    if (isMessageValid(name, email, subject, message)) {
-      sendEmail(siteDataSettings.emailToken, $('#contact-form').serialize());
-    } else {
-      $('#message-invalid-alert').show();
+  $('#contact-form').validate({
+    rules: {
+      name: "required",
+      email: {
+        required: true,
+        email: true
+      },
+      "*subject": "required",
+      message: "required"
+    },
+    messages: {
+      name: "Por favor, insira o seu nome.",
+      email: {
+        required: "Por favor, insira o seu email.",
+        email: "Por favor, introduza um endereço de email válido."
+      },
+      "*subject": "Por favor, indique o assunto da sua mensagem.",
+      message: "Por favor, insira uma mensagem a enviar."
+    },
+    submitHandler: function(form, event){
+      event.preventDefault();
+      $('.sending-alert').fadeIn();
+      sendEmail(siteDataSettings.emailToken, $(form).serialize(), 
+        function(){
+          $(form).get(0).reset();
+          $(form).find('.valid').removeClass('valid');
+          $('.sending-alert').fadeOut();
+          $('#sendSuccessModal').modal();
+      },
+        function(){
+          $('#sendFailModal').modal();
+        });
     }
-  });
+  })
 
-  $('.alert-close').on('click', function() {
-    $(this).parent().hide();
-  });
 };
 
 function initFooterEvents() {
@@ -188,6 +205,6 @@ function initEvents() {
 
 $(document)
   .ready(function() {
-    loadGoogleAPI();
+    // loadGoogleAPI();
     initEvents();
   });

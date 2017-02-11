@@ -3,6 +3,9 @@
 markdown: kramdown
 permalink: pretty
 
+kramdown:
+  auto_ids: false
+
 port: 3000
 
 sass:
