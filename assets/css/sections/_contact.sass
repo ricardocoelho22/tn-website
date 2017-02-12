@@ -58,32 +58,47 @@
         margin-top: 0
         color: $contact-label-error-color
 
-    .sending-alert
-      background-color: $dark-gray
-      text-align: center
+    .status-alert
       color: $white
       font-size: 1.8rem
       border-radius: 3px
       max-height: 0
       overflow-y: hidden
+      position: relative
 
-      img, span
+      i
+        font-size: 5.4rem
+        float: left
+        margin-right: 15px 
+
+      img
         display: block
         margin: auto
 
-    button[disabled=disabled], button:disabled
+      .close-button
+        position: absolute
+        top: 0
+        right: 0
+        background-color: transparent
+        border: none
+        padding: 5px
+        line-height: 1.5rem
+        font-size: 3.0rem
+
+    .success-alert
+      background-color: $green
+      text-align: left
+
+    .fail-alert
+      background-color: $red
+      text-align: left
+
+    .sending-alert
+      background-color: $dark-gray
+      text-align: center
+
+    button:disabled
       background-color: $light-gray
-
-  .modal button
-    margin: 0
-
-  .modal .modal-success .modal-content
-    border-color: $contact-modal-success-border-color
-    box-shadow: 0 0 16px $contact-modal-success-shadow-color
-
-  .modal .modal-fail .modal-content
-    border-color: $contact-modal-fail-border-color
-    box-shadow: 0 0 16px $contact-modal-fail-shadow-color
 
 @media (max-width: $desktop-width)
   .info-section

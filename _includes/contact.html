@@ -60,41 +60,23 @@
           <textarea name="message" title="Mensagem a enviar" placeholder="Mensagem"></textarea>
           </div>
         </div>
-          <input type="hidden" name="*honeypot"/>
-          <div class="sending-alert" role="alert">
-            <img src="/assets/img/wait-animation.gif" alt="Animação de espera">
-            <span>A enviar a mensagem...</span>
-          </div>
-          <button class="main-button" type="submit">Enviar</button>
+        <input type="hidden" name="*honeypot"/>
+        <div class="status-alert sending-alert" role="alert">
+          <img src="/assets/img/wait-animation.gif" alt="Animação de espera">
+          A enviar a mensagem...
+        </div>
+        <div class="status-alert success-alert" role="alert">
+          <button class="close-button" type="button">&times;</button>
+          <i class="fa fa-check-circle"></i>
+          <b>Mensagem enviada!</b> Obrigado por nos contactar. Enviaremos uma resposta assim que possível.
+        </div>
+        <div class="status-alert fail-alert" role="alert">
+          <button class="close-button" type="button">&times;</button>
+          <i class="fa fa-times-circle"></i>
+          <b>Não foi possível enviar a sua mensagem.</b> Por favor, tente mais tarde ou contacte-nos directamente através de <b>telefone, email, ou redes sociais.</b>
+        </div>
+        <button class="main-button" type="submit">Enviar</button>
       </form>
-    </div>
-    
-    <div class="modal fade" id="sendSuccessModal" tabindex="-1" role="dialog" aria-labelledby="sendSuccessModalHeader">
-      <div class="modal-dialog modal-success" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="sendSuccessModalHeader">Mensagem enviada!</h4>
-          </div>
-          <div class="modal-body">
-            <p>Obrigado por nos contactar! Enviaremos uma resposta assim que possível.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal fade" id="sendFailModal" tabindex="-1" role="dialog" aria-labelledby="sendFailModalHeader">
-      <div class="modal-dialog modal-fail" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="sendFailModalHeader">Falha no envio da mensagem.</h4>
-          </div>
-          <div class="modal-body">
-            <p>Não foi possível enviar a sua mensagem. Por favor, tente mais tarde.</p>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </section>

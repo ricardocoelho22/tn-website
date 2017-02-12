@@ -131,37 +131,49 @@ function initGallerySectionEvents() {
   });
 };
 
-function showSendingEmailAlert(form){
-  $(form).find('.sending-alert').animate({maxHeight: '100px', padding: '15px'}, {queue: false});
-  $(form).find('*[type="submit"]').animate({marginTop: '15px'}, {queue: false});
-};
+function showStatusAlert($form, status){
+  switch(status){
+    case 'sending':
+      $form.find('.sending-alert').animate({maxHeight: '100px', padding: '15px'}, {queue: false});
+      break;
+    case 'success':
+      $form.find('.success-alert').animate({maxHeight: '100px', padding: '15px'}, {queue: false});
+      break;
+    case 'fail':
+    $form.find('.fail-alert').animate({maxHeight: '100px', padding: '15px'}, {queue: false});
+      break;
+  }
+  $form.find('*[type="submit"]').animate({marginTop: '15px'}, {queue: false});
+}
 
-function hideSendingEmailAlert(form){
-  $(form).find('.sending-alert').animate({maxHeight: '0px', padding: '0px'}, {queue: false});
-  $(form).find('*[type="submit"]').animate({marginTop: '0px'}, {queue: false});
+function hideStatusAlert($form, status){
+  switch(status){
+    case 'sending':
+      $form.find('.sending-alert').animate({maxHeight: '0px', padding: '0px'}, {queue: false});
+      break;
+    case 'success':
+      $form.find('.success-alert').animate({maxHeight: '0px', padding: '0px'}, {queue: false});
+      break;
+    case 'fail':
+    $form.find('.fail-alert').animate({maxHeight: '0px', padding: '0px'}, {queue: false});
+      break;
+  }
+  $form.find('*[type="submit"]').animate({marginTop: '0px'}, {queue: false});
 }
 
 function sendEmail(emailToken, message, success, fail) {
-  // $.ajax({
-  //   method: 'POST',
-  //   url: 'https://www.enformed.io/' + emailToken,
-  //   data: message,
-  //   datatype: 'json',
-  //   success: function(){
-  //     $('#contact-form').get(0).reset();
-  //     $('#sendSuccessModal').modal();
-  //   },
-  //   error: function(){
-  //     $('#sendFailModal').modal();
-  //   }
-  // });
-  console.log('sent email to ' + 'https://www.enformed.io/' + emailToken + ' with message ' + message);
-
-  success.call();
+  $.ajax({
+    method: 'POST',
+    url: 'https://www.enformed.io/' + emailToken,
+    data: message,
+    datatype: 'json',
+    success: success,
+    error: fail
+  });
 };
 
 function initContactSectionEvents() {
-  $('#contact-form').validate({
+  $('.section-contact #contact-form').validate({
     rules: {
       name: "required",
       email: {
@@ -179,24 +191,37 @@ function initContactSectionEvents() {
       },
       "*subject": "Por favor, indique o assunto da sua mensagem.",
       message: "Por favor, insira uma mensagem a enviar."
-    },
-    submitHandler: function(form, event){
-      event.preventDefault();
-      showSendingEmailAlert(form);
-      $(form).find('*[type="submit"]').prop('disabled', true);
-      sendEmail(siteDataSettings.emailToken, $(form).serialize(), 
-        function(){
-          hideSendingEmailAlert(form);
-          $('#sendSuccessModal').modal();
-          $(form).get(0).reset();
-          $(form).find('.valid').removeClass('valid');
-          $(form).find('*[type="submit"]').prop('disabled', false);
-      },
-        function(){
-          $('#sendFailModal').modal();
-        });
     }
-  })
+  });
+
+  $('.section-contact #contact-form').submit(function(event){
+    var $form = $(event.target);
+    event.preventDefault();
+    showStatusAlert($form, 'sending');
+    $form.find('*[type="submit"]').prop('disabled', true);
+    sendEmail(siteDataSettings.emailToken, $form.serialize(), 
+      function(){
+        hideStatusAlert($form, 'sending');
+        showStatusAlert($form, 'success');
+        $form.get(0).reset();
+        $form.find('.valid').removeClass('valid');
+        $form.find('*[type="submit"]').prop('disabled', false);
+    },
+      function(){
+        hideStatusAlert($form, 'sending');
+        showStatusAlert($form, 'fail');
+        $form.find('*[type="submit"]').prop('disabled', false);
+      });
+  });
+
+  $('.section-contact .status-alert .close-button').on('click', function(event){
+    var alert = $(event.target).parent();
+    if (alert.hasClass('success-alert')) {
+      hideStatusAlert($('#contact-form'), 'success');
+    }else if (alert.hasClass('fail-alert')) {
+      hideStatusAlert($('#contact-form'), 'fail');
+    }
+  });
 
 };
 
