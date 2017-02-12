@@ -191,15 +191,13 @@ function initContactSectionEvents() {
       },
       "*subject": "Por favor, indique o assunto da sua mensagem.",
       message: "Por favor, insira uma mensagem a enviar."
-    }
-  });
-
-  $('.section-contact #contact-form').submit(function(event){
-    var $form = $(event.target);
-    event.preventDefault();
-    showStatusAlert($form, 'sending');
-    $form.find('*[type="submit"]').prop('disabled', true);
-    sendEmail(siteDataSettings.emailToken, $form.serialize(), 
+    },
+    submitHandler: function(form, event){
+      var $form = $(form);
+      event.preventDefault();
+      showStatusAlert($form, 'sending');
+      $form.find('*[type="submit"]').prop('disabled', true);
+      sendEmail(siteDataSettings.emailToken, $form.serialize(), 
       function(){
         hideStatusAlert($form, 'sending');
         showStatusAlert($form, 'success');
@@ -212,6 +210,7 @@ function initContactSectionEvents() {
         showStatusAlert($form, 'fail');
         $form.find('*[type="submit"]').prop('disabled', false);
       });
+    }
   });
 
   $('.section-contact .status-alert .close-button').on('click', function(event){
