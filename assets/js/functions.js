@@ -229,7 +229,7 @@ function initFooterEvents() {
     event.preventDefault();
     scrollToAnchor($(this));
   });
-}
+};
 
 function initEvents() {
   initBodyEvents();

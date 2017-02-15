@@ -3,17 +3,25 @@
     <div class="row">
     {% assign events = site.contents | where:'category', 'event' | sort: 'date' | reverse %}
     {% for event in events limit:3 %}
-      <div class="col-sm-4 event-container center-container">
-        <div class="event-header">
-          <img src="{{event.image.src}}" alt="{{event.image.alt}}">
-          <div class="event-date">
-            <span class="event-day">{{event.day}}</span>
-            <span class="event-month">{{event.month}}</span>
+      <div class="col-sm-4 center-container">
+        {% if forloop.first %}
+          <div class="event-container negative-margin-sm">
+        {% else %}
+          <div class="event-container">
+        {% endif %}
+          <div class="event-header">
+            <img src="{{event.image.src}}" alt="{{event.image.alt}}">
+            <div class="event-date">
+              <span class="event-day">{{event.day}}</span>
+              <span class="event-month">{{event.month}}</span>
+            </div>
           </div>
-        </div>
-        <div class="event-body">
-          {{event.content}}
-          <a href="{{event.link}}" target="_blank" class="main-button event-button">Mais</a>
+          <div class="event-body">
+            {{event.content}}
+          </div>
+          <div class="event-footer">
+            <a href="{{event.link}}" target="_blank" class="main-button">Mais</a>
+          </div>
         </div>
       </div>
     {% endfor %}
