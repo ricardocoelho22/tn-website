@@ -4,7 +4,7 @@
       {% assign classes-content = site.contents | where:"section", "classes" %}
       {% assign columnSize = 12 | divided_by:classes-content.size %}
       {% for class in classes-content reversed %}
-      <div class="col-sm-{{columnSize}} center-container">
+      <div class="col-sm-{{columnSize}} center-container class-container">
         <img src="{{class.image.src}}" alt="{{class.image.alt}}">
         <div class="text-container">
           {{class.content}}

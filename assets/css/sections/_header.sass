@@ -1,5 +1,5 @@
-header
-  height: 500px
+.site-header
+  height: 360px
   background:
     color: $nav-bg-color
     image: url(../img/landing-bg.jpg)
@@ -15,7 +15,14 @@ header
     background-color: $nav-bg-color
     border-radius: 0
     border: none
-    max-height: 90px
+    max-height: none
+
+    .logos img
+      max-height: 90px
+      margin-right: 5px
+
+      &:last-child
+        margin-right: 0
 
     .navbar-header
 
@@ -34,18 +41,22 @@ header
 
       .navbar-brand
         text-align: center
-        display: none
+        display: block
 
     .navbar-nav
       text-align: center
+      margin-top: 60px
+
+      .inline-brand
+        display: none
 
       li a
-        line-height: 60px
         text-decoration: none
         text-transform: uppercase
         color: $nav-text-color
         letter-spacing: 0.1rem
-        padding: 15px
+        line-height: 20px
+        padding: 10px
 
         &:hover, &:focus
           color: $nav-text-highlight-color
@@ -54,39 +65,38 @@ header
       .active a
         color: $nav-text-highlight-color
 
-@media (max-width: $desktop-width)
+@media (min-width: $tablet-width)
   .site-header
     height: 400px
 
-    .logos img
-      max-height: 90px
-      margin-right: 5px
-
-      &:last-child
-        margin-right: 0
-
-    .navbar .navbar-nav li a
-      padding: 15px 10px
-
-@media (max-width: $tablet-width)
-  .site-header 
-    height: 360px
-
     .navbar
-      max-height: none
-
-      .navbar-header .navbar-brand
-        display: block
+      max-height: 90px
 
       .navbar-nav 
-        margin-top: 60px
-        
+        margin-top: 0 
+
         li a
-          line-height: 20px
-          padding: 10px
+          line-height: 60px
+          padding: 15px 10px
 
         .inline-brand
-          display: none
+          display: block
 
+      .navbar-header .navbar-brand
+        display: none
 
-      
+@media (min-width: $desktop-width)
+  .site-header 
+    height: 500px
+
+    .navbar
+
+      .logos img
+        max-height: none
+        margin-right: 10px
+
+        &:last-child
+          margin-right: 0 
+
+      .navbar-nav li a
+        padding: 15px

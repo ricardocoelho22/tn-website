@@ -6,8 +6,8 @@
 
     .modal-close
       position: absolute
-      top: -15px
-      right: -15px
+      top: -10px
+      right: -10px
       color: $gallery-modal-close-btn-color
       font-size: 2.8rem
       transition: 0.3s
@@ -17,8 +17,6 @@
       background-color: $gallery-modal-close-btn-bg-color
       width: 30px
       height: 30px
-      text-align: center
-      vertical-align: middle
       line-height: 20px
       box-shadow: -3px 3px 5px 0 $gallery-modal-shadow-color
 
@@ -61,7 +59,7 @@
       font-size: 1.8rem
 
     img
-      max-width: 100%
+      width: 100%
 
   .img-container
     position: relative
@@ -115,7 +113,8 @@
           text-transform: uppercase
           color: $gallery-caption-color
 
-@media (max-width: $tablet-width)
-  .section-gallery .modal .modal-dialog
-    margin: 15px
+@media (min-width: $tablet-width)
+  .section-gallery .modal .modal-close
+    top: -15px
+    right: -15px
           

@@ -3,10 +3,10 @@
   padding-top: 0
 
   .event-container
-    margin-top: -35px
+    margin-top: 20px
 
     &:hover 
-      box-shadow: 0 3px 10px $shadow-color
+      box-shadow: 0 5px 10px $shadow-color
       -webkit-transition-duration: 0.2s
       transition-duration: 0.2s
 
@@ -38,9 +38,10 @@
 
     .event-body
       background-color: $event-bg-color
-      height: 250px
       padding-top: 15px
       overflow: hidden
+      height: auto
+      max-height: 290px
 
       h4
         padding-bottom: 15px
@@ -54,13 +55,13 @@
       background-color: $event-bg-color
       padding: 15px
 
-@media (max-width: $tablet-width)
+  .negative-margin-sm
+    margin-top: -10px
+
+@media (min-width: $tablet-width)
   .section-events .event-container
-    margin-top: 20px
+    margin-top: -35px
 
     .event-body
-      height: auto
-      max-height: 290px
-
-    &.negative-margin-sm
-      margin-top: -10px
+      height: 250px
+      max-height: none

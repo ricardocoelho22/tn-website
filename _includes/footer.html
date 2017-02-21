@@ -1,7 +1,7 @@
 <footer class="site-footer">
   <div class="container">
     <div class="row">
-      <div class="col-md-4 col-sm-3 footer-section">
+      <div class="col-md-4 footer-section">
         <div class="logos">
         {% for logo in site.data.settings.logos %}
           <img alt="{{logo.alt}}" src="{{logo.src}}">
@@ -9,7 +9,7 @@
         </div>
         <span class="credits">Tigres Negros - 2016</span>
       </div>
-      <div class="col-md-2 col-sm-2 footer-section">
+      <div class="col-md-2 footer-section">
         <h5>Sobre Nós</h5>
         <ul class="site-links">
         {% for item in site.data.settings.nav %}
@@ -19,7 +19,7 @@
         {% endfor %}
         </ul>
       </div>
-      <div class="col-md-3 col-sm-4 footer-section">
+      <div class="col-md-3 footer-section">
         <h5>Horário</h5>
         {% for entry in site.data.settings.schedule %}
           <h6>{{entry.division}}</h6>
@@ -31,18 +31,15 @@
           {% endfor %}
         {% endfor %}
       </div>
-      <div class="col-md-3 col-sm-3 footer-section">
+      <div class="col-md-3 footer-section">
         <h5>Contacto</h5>
         <div class="contact-line">
-          <i class="fa fa-phone contact-icon"></i>
           <span>{{site.data.settings.telephone}}</span>
         </div>
         <div class="contact-line">
-          <i class="fa fa-envelope contact-icon"></i>
           <span>{{site.data.settings.email}}</span>
         </div>
         <div class="contact-line">
-          <i class="fa fa-map-marker contact-icon"></i>
           <span>{{site.data.settings.address}}</span>
         </div>
         <div class="social-networks">
