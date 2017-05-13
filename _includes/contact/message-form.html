@@ -1,0 +1,39 @@
+<form class="col-md-8 col-sm-12 message-form" id="contact-form">
+  <h2>Envie-nos uma mensagem!</h2>
+  <div class="row">
+    <div class="col-sm-6">
+      <input type="text" name="name" title="O seu nome" placeholder="Nome">
+    </div>
+    <div class="col-sm-6">
+      <input type="email" name="email" title="O seu email" placeholder="E-mail">
+    </div>
+    <div class="col-xs-12">
+      <input type="text" name="*subject" title="Assunto da mensagem" placeholder="Assunto">
+    </div>
+    <div class="col-xs-12">
+      <textarea name="message" title="Mensagem a enviar" placeholder="Mensagem"></textarea>
+    </div>
+  </div>
+  <input type="hidden" name="*honeypot" />
+  <div class="status-alert sending-alert" role="alert">
+    <img src="assets/img/wait-animation.gif" alt="Animação de espera"> A enviar a
+    mensagem...
+  </div>
+  <div class="status-alert success-alert" role="alert">
+    <button class="close-button" type="button">&times;</button>
+    <i class="fa fa-check-circle"></i>
+    <p class="status-message">
+      <b>Mensagem enviada!</b> Obrigado por nos contactar. Enviaremos uma resposta
+      assim que possível.
+    </p>
+  </div>
+  <div class="status-alert fail-alert" role="alert">
+    <button class="close-button" type="button">&times;</button>
+    <i class="fa fa-times-circle"></i>
+    <p class="status-message">
+      <b>Não foi possível enviar a sua mensagem.</b> Por favor, tente mais tarde
+      ou contacte-nos directamente através de <b>telefone, email, ou redes sociais.</b>
+    </p>
+  </div>
+  <button class="main-button" type="submit">Enviar</button>
+</form>

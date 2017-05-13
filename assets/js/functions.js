@@ -134,13 +134,13 @@ function initGallerySectionEvents() {
 function showStatusAlert($form, status){
   switch(status){
     case 'sending':
-      $form.find('.sending-alert').animate({maxHeight: '100px', padding: '15px'}, {queue: false});
+      $form.find('.sending-alert').animate({maxHeight: '200px', padding: '15px'}, {queue: false});
       break;
     case 'success':
-      $form.find('.success-alert').animate({maxHeight: '100px', padding: '15px'}, {queue: false});
+      $form.find('.success-alert').animate({maxHeight: '200px', padding: '15px'}, {queue: false});
       break;
     case 'fail':
-    $form.find('.fail-alert').animate({maxHeight: '100px', padding: '15px'}, {queue: false});
+    $form.find('.fail-alert').animate({maxHeight: '200px', padding: '15px'}, {queue: false});
       break;
   }
   $form.find('*[type="submit"]').animate({marginTop: '15px'}, {queue: false});

@@ -35,6 +35,7 @@
       text-align: center
     
     input, textarea
+      margin-top: 15px
       border: 2px solid $contact-field-border-color
       border-radius: 3px
       color: $text-color
@@ -54,27 +55,24 @@
       overflow-y: auto
       resize: none
       word-wrap: break-word
-      margin-bottom: 15px
 
-    label
-      margin-top: 15px
-      color: $text-color
-
-      &.error
-        margin-top: 0
-        color: $contact-label-error-color
+    label.error
+      color: $contact-label-error-color
 
     .status-alert
       color: $white
+      display: flex
       font-size: 1.8rem
       border-radius: 3px
       max-height: 0
       overflow-y: hidden
       position: relative
 
+      .status-message
+        color: $white
+
       i
         font-size: 5.4rem
-        float: left
         margin-right: 15px 
 
       img
@@ -94,6 +92,7 @@
     .success-alert
       background-color: $green
       text-align: left
+      flex-direction: column
 
     .fail-alert
       background-color: $red
@@ -103,9 +102,15 @@
       background-color: $dark-gray
       text-align: center
 
-    button:disabled
-      background-color: $light-gray
+    .main-button
+      margin-top: 15px
+      float: right
 
 @media (min-width: $desktop-width)
-  .section-contact .info-section
-    text-align: left
+  .section-contact 
+
+    .info-section
+      text-align: left
+
+    .message-form .main-button
+      float: none
