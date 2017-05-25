@@ -3,6 +3,10 @@
 
 address: 'Av. Jaime Ferreira'
 
+coordinates:
+  latitude: 39.056272
+  longitude: -9.006574
+
 telephone: '999 999 999'
 
 email: 'ricardocoelho22@gmail.com'
