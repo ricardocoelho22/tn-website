@@ -1,8 +1,8 @@
 .site-header
   height: 360px
   background:
-    color: $nav-bg-color
-    image: url(../img/landing-bg.jpg)
+    color: transparentize($black, 0.2)
+    image: url($landing-image-path)
     position: center top
     repeat: no-repeat
     size: cover
@@ -12,7 +12,7 @@
     margin: 0 auto
 
   .navbar
-    background-color: $nav-bg-color
+    background-color: transparentize($black, 0.2)
     border-radius: 0
     border: none
     max-height: none
@@ -34,10 +34,10 @@
         right: 0
 
         &:active .icon-bar
-          background-color: $nav-text-highlight-color
+          background-color: $green
 
         .icon-bar
-          background-color: $nav-text-color
+          background-color: $white
 
       .navbar-brand
         text-align: center
@@ -53,17 +53,17 @@
       li a
         text-decoration: none
         text-transform: uppercase
-        color: $nav-text-color
+        color: $white
         letter-spacing: 0.1rem
         line-height: 20px
         padding: 10px
 
         &:hover, &:focus
-          color: $nav-text-highlight-color
+          color: $green
           background-color: transparent
 
       .active a
-        color: $nav-text-highlight-color
+        color: $green
 
 @media (min-width: $tablet-width)
   .site-header

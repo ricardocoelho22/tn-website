@@ -1,12 +1,12 @@
 .section-events
-  background-color: $bg-alt-color
+  background-color: $very-light-gray
   padding-top: 0
 
   .event-container
     margin-top: 20px
 
     &:hover 
-      box-shadow: 0 5px 10px $shadow-color
+      box-shadow: 0 5px 10px $dim-gray
       -webkit-transition-duration: 0.2s
       transition-duration: 0.2s
 
@@ -22,10 +22,10 @@
         position: absolute
         bottom: 0
         right: 0
-        background-color: $event-date-bg-color
+        background-color: transparentize($black, 0.25)
         width: 65px
         height: 65px
-        color: $event-date-text-color
+        color: $white
         text-align: center
 
         .event-day
@@ -37,7 +37,7 @@
           text-transform: uppercase
 
     .event-body
-      background-color: $event-bg-color
+      background-color: $white
       padding-top: 15px
       overflow: hidden
       height: auto
@@ -45,14 +45,14 @@
 
       h4
         padding-bottom: 15px
-        border-bottom: 4px solid $event-title-border-color
+        border-bottom: 4px solid $green
         margin: 0 15px
 
       p
         margin: 15px 15px 0 15px
 
     .event-footer
-      background-color: $event-bg-color
+      background-color: $white
       padding: 15px
 
   .negative-margin-sm

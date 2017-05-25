@@ -2,7 +2,7 @@ html
   font-size: 62.5%
 
 body
-  background: $bg-color
+  background: $white
   font-size: 1.4rem
   font-family: 'PT Sans', sans-serif
 
@@ -10,7 +10,7 @@ section, footer
   padding: 50px 0
 
 h1, h2, h3, h4, h5, h6
-  color: $heading-color
+  color: $dark-gray
   letter-spacing: 0.1rem
   padding: 0
   margin: 0
@@ -41,7 +41,7 @@ h6
   text-transform: uppercase
 
 p
-  color: $text-color
+  color: $gray
   line-height: 2.4rem
   margin: 0
 
@@ -52,27 +52,25 @@ a
   display: inline-block
 
 .main-button
-  background-color: $btn-bg-color
+  background-color: $green
   border-radius: 3px
   border: none
   padding: 8px 30px
   text-align: center
-  color: $btn-text-color
+  color: $white
   text-decoration: none
   text-transform: uppercase
   letter-spacing: 0.1rem
   cursor: pointer
 
   &:hover, &:focus
-    background-color: $btn-bg-highlight-color
-    color: $btn-text-color
-    text-decoration: none
+    background-color: darken($green, 15%)
     -webkit-transition-duration: 0.2s
     transition-duration: 0.2s
 
   &:active
-    background-color: $btn-bg-active-color
-    box-shadow: inset 0 3px 5px $btn-bg-inset-shadow-color
+    background-color: darken($green, 25%)
+    box-shadow: inset 0 3px 5px transparentize($black, 0.9)
 
 .modal-backdrop.in
   opacity: 0.9
@@ -88,18 +86,18 @@ a
   -webkit-transition: 0.3s
   transition: 0.3s
   opacity: 0.5
-  border: 2px solid $btn-border-color
+  border: 2px solid $white
   border-radius: 50%
-  color: $btn-text-color
-  background-color: $btn-bg-color
+  color: $white
+  background-color: $green
 
   &:hover, &:focus
     opacity: 1
     outline: none
 
   &:active
-    background-color: $btn-bg-active-color
-    box-shadow: inset 0 3px 5px $btn-bg-inset-shadow-color
+    background-color: darken($green, 25%)
+    box-shadow: inset 0 3px 5px transparentize($black, 0.9)
 
 .center-container
   max-width: 500px
