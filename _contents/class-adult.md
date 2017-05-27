@@ -6,6 +6,6 @@ image:
   alt: 'Aula para adultos'
 ---
 
-## Adultos
+## Tae Kick Do
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum ducimus voluptatibus error eveniet itaque nam, quaerat excepturi veritatis commodi quae nostrum dignissimos, beatae consequatur, repellendus modi molestiae earum suscipit odit.
+**Classe a partir dos 12 anos**, onde a **vertente marcial é maior** e a exigência física também. Os objetivos de cada atleta são tidos em conta no planeamento, existindo **treinos específicos para cada objetivo**.

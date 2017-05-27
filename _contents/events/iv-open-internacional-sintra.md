@@ -1,15 +1,23 @@
 ---
 category: event
-date: 2016-05-07
+date: 2016-11-12
 
-link: 'https://pt-pt.facebook.com/events/745766562231026/'
-day: '07'
-month: 'Mai'
+link: ''
+day: '12'
+month: 'Nov'
 image:
-  src: 'assets/img/events/poster-iv-open-internacional-sintra.jpg'
-  alt: 'Poster iv open internacional sintra'
+  src: 'assets/img/events/1-open-tecnica-tkdsac.jpg'
+  alt: '1º Open de Poomsaes TKDSAC'
 ---
 
-#### IV Open Internacional de Sintra
+#### 1º Open de Poomsaes TKDSAC
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum soluta, deserunt totam architecto numquam vel quod impedit natus temporibus quaerat officia placeat, blanditiis fugiat doloremque. Officiis eligendi perspiciatis tenetur ipsam.
+O 1º Open de Poomsaes TKDSAC realizou-se no Pavilhão Paz e Amizade em Loures.
+O Torneio foi excelentemente organizado, tecnicamente muito evoluído com tablets com comunicação para os monitores dos resultados, não existiram problemas de maior e com bom ambiente. Participaram cerca de 400 atletas, 35 clubes e 30 árbitros.
+
+As classificações por clubes na categoria de Dans foi a seguinte:
+  - 1º Fed Andaluza TKD
+  - 2º C D C Casal do Marco
+  - 3º Ass TKD Costa Verde
+
+O Sporting Clube de Alenquer obteve um 8º Lugar em Benjamim B pelo Diogo Correia, um 13º Lugar em Benjamim A pelo Tomás Alves além disso teve a minha participação como juiz responsável de área e o António Bruno Correia como coach.

@@ -1,15 +1,20 @@
 ---
 category: event
-date: 2016-05-26
+date: 2016-05-11
 
-link: 'https://pt-pt.facebook.com/events/745766562231026/'
-day: '26'
+link: ''
+day: '11'
 month: 'Mai'
 image:
-  src: 'assets/img/events/poster-curso-distrital-juizes-poomsaes.jpg'
-  alt: 'Poster curso distrital juizes poomsaes'
+  src: 'assets/img/events/torneio-combates-unhos.jpg'
+  alt: '9º Torneio de Taekwondo de Unhos – Combates'
 ---
 
-#### Curso Distrital de Juizes de Poomsaes
+#### 9º Torneio de Taekwondo de Unhos – Combates
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum soluta, deserunt totam architecto numquam vel quod impedit natus temporibus quaerat officia placeat, blanditiis fugiat doloremque. Officiis eligendi perspiciatis tenetur ipsam.
+O Torneio de Unhos realizou-se como habitualmente no Pavilhão Gimnodesportivo Alto do Moinho no Catujal. O Torneio foi bem organizado, sem problemas de maior e com bom ambiente
+
+O Sporting Clube de Alenquer obteve:
+  - 1º Lugar em -78Kg pelo Gonçalo Simões
+  - 2º Lugar em -41Kg pelo João Costa
+  - 3º Lugar em -53Kg pelo Diogo Correia
