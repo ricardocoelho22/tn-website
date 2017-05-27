@@ -19,7 +19,11 @@
     var marker = new google.maps.Marker({
       position: googleMapsInfo.coordSCA,
       map: map,
-      title: googleMapsInfo.title
+      title: googleMapsInfo.title,
+      icon: {
+        url: SITE_DATA_SETTINGS.logos[1].src,
+        scaledSize: new google.maps.Size(38, 50)
+      }
     });
   };
 
