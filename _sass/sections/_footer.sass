@@ -50,26 +50,19 @@
       white-space: nowrap
 
     .social-networks a
-      text-decoration: none
-      background-color: $white
-      color: $dark-gray
-      display: inline-block
+      display: inline-block 
       width: 40px
-      height: 40px
-      border-radius: 50%
-      text-align: center
-      line-height: 40px
-      margin-top: 10px
       cursor: pointer
+      margin-top: 10px
 
-      &:hover, &:focus
-        background-color: $green
+      svg
+        fill: $white
 
-      &:active
-        box-shadow: inset 0 0 5px 2px transparentize($black, 0.5)
+        &:hover, &:focus
+          fill: $green
 
-      i
-        font-size: 1.8rem
+        &:active
+          fill: darken($green, 20%)
 
 @media (min-width: $desktop-width)
   .site-footer .footer-section

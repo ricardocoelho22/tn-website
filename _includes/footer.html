@@ -45,7 +45,7 @@
         <div class="social-networks">
           {% for social in site.data.settings.social %}
           <a href="{{social.url}}" target="_blank">
-            <i class="fa fa-{{social.name}}"></i>
+            {% include svg/{{social.name}}.svg %}
           </a>
           {% endfor %}
         </div>

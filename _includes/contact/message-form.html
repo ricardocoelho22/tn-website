@@ -16,20 +16,24 @@
   </div>
   <input type="hidden" name="*honeypot" />
   <div class="status-alert sending-alert" role="alert">
-    <img src="assets/img/wait-animation.gif" alt="Animação de espera"> A enviar a
-    mensagem...
+    {% include loading-icon.html %}
+    A enviar a mensagem...
   </div>
   <div class="status-alert success-alert" role="alert">
-    <button class="close-button" type="button">&times;</button>
-    <i class="fa fa-check-circle"></i>
+    <button class="close-button" type="button">
+      {% include svg/cross.svg %}
+    </button>
+    {% include svg/check-full.svg %}
     <p class="status-message">
       <b>Mensagem enviada!</b> Obrigado por nos contactar. Enviaremos uma resposta
       assim que possível.
     </p>
   </div>
   <div class="status-alert fail-alert" role="alert">
-    <button class="close-button" type="button">&times;</button>
-    <i class="fa fa-times-circle"></i>
+    <button class="close-button" type="button">
+      {% include svg/cross.svg %}
+    </button>
+    {% include svg/cross-full.svg %}
     <p class="status-message">
       <b>Não foi possível enviar a sua mensagem.</b> Por favor, tente mais tarde
       ou contacte-nos directamente através de <b>telefone, email, ou redes sociais.</b>

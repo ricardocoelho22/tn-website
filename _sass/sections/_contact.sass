@@ -16,17 +16,25 @@
     h6
       margin-top: 10px
 
-    a[class$="-icon"]
-      font-size: 2.0rem
-      text-decoration: none
+    .icon-text
+      display: flex
+      align-items: center
+      justify-content: center
 
-    i
-      width: 23px
-      margin-right: 3px
-      text-align: center
+    svg
+      width: 14px
+      fill: $gray
+      margin-right: 5px
 
-    .facebook-icon
-      color: $facebook-color
+    .facebook
+      cursor: pointer
+
+      svg
+        width: 23px
+        fill: $facebook-color
+
+        &:active
+          fill: darken($facebook-color, 20%)
 
   .message-form
     margin-top: 30px
@@ -65,32 +73,46 @@
       display: -webkit-flex
       display: -ms-flexbox
       display: flex
+      align-items: center
       font-size: 1.8rem
       border-radius: 3px
-      max-height: 0
       overflow-y: hidden
       position: relative
+      max-height: 0
+      padding: 0
+      -webkit-transition: all 0.5s ease
+      -moz-transition: all 0.5s ease
+      -o-transition: all 0.5s ease
+      transition: all 0.5s ease
+
+      &.active
+        max-height: 200px
+        padding: 15px
 
       .status-message
         color: $white
 
-      i
-        font-size: 5.4rem
+      svg
+        width: 50px
+        flex: 0 0 50px
+        fill: $white
         margin-right: 15px 
-
-      img
-        display: block
-        margin: auto
 
       .close-button
         position: absolute
-        top: 0
-        right: 0
+        top: 5px
+        right: 5px
         background-color: transparent
         border: none
-        padding: 5px
-        line-height: 1.5rem
-        font-size: 3.0rem
+        margin: 0
+        padding: 0
+        font-size: 0
+
+        svg
+          width: 10px
+          fill: $white
+          margin: 0
+          padding: 0
 
     .success-alert
       background-color: $green
@@ -118,6 +140,9 @@
 
     .info-section
       text-align: left
+
+      .icon-text
+        justify-content: flex-start
 
     .message-form .main-button
       float: none

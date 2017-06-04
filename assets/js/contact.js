@@ -1,59 +1,16 @@
 (function(contact, $, undefined) {
-  var statusAlert = {
-    open:{
-      maxHeight: '200px',
-      padding: '15px'
-    },
-    closed: {
-      maxHeight: '0',
-      padding: '0'
-    }
-  };
+  var status = {
+    sending: 'sending',
+    success: 'success',
+    fail: 'fail'
+  }
 
   function showStatusAlert($form, status){
-    switch(status){
-      case 'sending':
-        $form.find('.sending-alert').animate({
-          maxHeight: statusAlert.open.maxHeight, 
-          padding: statusAlert.open.padding
-        }, {queue: false});
-        break;
-      case 'success':
-        $form.find('.success-alert').animate({
-          maxHeight: statusAlert.open.maxHeight, 
-          padding: statusAlert.open.padding
-        }, {queue: false});
-        break;
-      case 'fail':
-      $form.find('.fail-alert').animate({
-          maxHeight: statusAlert.open.maxHeight, 
-          padding: statusAlert.open.padding
-        }, {queue: false});
-        break;
-    }
+    $form.find('.' + status + '-alert').addClass('active');
   }
 
   function hideStatusAlert($form, status){
-    switch(status){
-      case 'sending':
-        $form.find('.sending-alert').animate({
-          maxHeight: statusAlert.closed.maxHeight, 
-          padding: statusAlert.closed.padding
-        }, {queue: false});
-        break;
-      case 'success':
-        $form.find('.success-alert').animate({
-          maxHeight: statusAlert.closed.maxHeight, 
-          padding: statusAlert.closed.padding
-        }, {queue: false});
-        break;
-      case 'fail':
-      $form.find('.fail-alert').animate({
-          maxHeight: statusAlert.closed.maxHeight, 
-          padding: statusAlert.closed.padding
-        }, {queue: false});
-        break;
-    }
+    $form.find('.' + status + '-alert').removeClass('active');
   }
 
   function sendEmail(emailToken, message, success, fail) {
@@ -70,19 +27,19 @@
   function submitHandler(form, event) {
     var $form = $(form);
     event.preventDefault();
-    showStatusAlert($form, 'sending');
+    showStatusAlert($form, status.sending);
     $form.find('*[type="submit"]').prop('disabled', true);
     sendEmail(SITE_DATA_SETTINGS.emailToken, $form.serialize(), 
       function() {
-        hideStatusAlert($form, 'sending');
-        showStatusAlert($form, 'success');
+        hideStatusAlert($form, status.sending);
+        showStatusAlert($form, status.success);
         $form.get(0).reset();
         $form.find('.valid').removeClass('valid');
         $form.find('*[type="submit"]').prop('disabled', false);
       },
       function(){
-        hideStatusAlert($form, 'sending');
-        showStatusAlert($form, 'fail');
+        hideStatusAlert($form, status.sending);
+        showStatusAlert($form, status.fail);
         $form.find('*[type="submit"]').prop('disabled', false);
       });
   }
@@ -111,17 +68,13 @@
     });
   }
 
-  function onAlertClick(event) {
-    var alert = $(event.target).parent();
-    if (alert.hasClass('success-alert')) {
-      hideStatusAlert($('#contact-form'), 'success');
-    }else if (alert.hasClass('fail-alert')) {
-      hideStatusAlert($('#contact-form'), 'fail');
-    }
-  }
-
   contact.init = function() {
     setValidator();
-    $('.section-contact .status-alert .close-button').on('click', onAlertClick)
+    $('.section-contact .status-alert.success-alert .close-button').on('click', function() {
+      hideStatusAlert($('.section-contact #contact-form'), status.success);
+    });
+    $('.section-contact .status-alert.fail-alert .close-button').on('click', function() {
+      hideStatusAlert($('.section-contact #contact-form'), status.fail);
+    });
   };
 }(window.contact = window.contact || {}, jQuery));

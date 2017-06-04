@@ -9,50 +9,52 @@
 
       .modal-close
         position: absolute
-        top: -10px
-        right: -10px
-        color: $white
-        font-size: 2.8rem
-        transition: 0.3s
-        -webkit-transition: 0.3s
-        border: 2px solid $white
+        top: -15px
+        right: -15px
+        font-size: 0
+        border: none
         border-radius: 50%
+        padding: 0
         background-color: $black
-        width: 30px
-        height: 30px
-        line-height: 20px
-        box-shadow: -3px 3px 5px 0 transparentize($black, 0.7)
 
-        &:hover, &:focus 
-          color: $light-gray
-          border-color: $light-gray
+        &:hover, &:focus
+          
+          svg
+            fill: $light-gray
+
+        svg
+          fill: $white
+          width: 30px
 
       .modal-nav
-        color: transparent
-        border: none
         background-color: transparent
-        font-weight: 700
-        font-size: 3.0rem
-        transition: 0.3s
-        -webkit-transition: 0.3s
+        border: none
+        font-size: 0
         width: 50px
         height: 100%
-
-        &:hover
-          color: $white
-
-        &:active
-          color: $light-gray
-
-      .nav-left
         position: absolute
         top: 0
-        left: 0
 
-      .nav-right
-        position: absolute
-        top: 0
-        right: 0
+        svg
+          fill: transparent
+          width: 30px
+          transition: all .3s ease
+          -webkit-transition: all .3s ease
+
+        &:active svg
+          fill: $light-gray
+
+        &:hover svg
+          fill: $white
+
+        &:disabled
+          display: none
+
+        &.nav-left
+          left: 0
+
+        &.nav-right
+          right: 0
 
       .modal-caption
         text-align: center
@@ -86,8 +88,6 @@
       top: 0
       left: 0
       opacity: 0
-      filter: alpha(opacity=0)
-      -webkit-filter: alpha(opacity=0)
       background-color: transparentize($black, 0.5)
       transition: all .4s ease-in-out
       -webkit-transition: all 0.4s ease-in-out
@@ -95,8 +95,6 @@
 
       &:hover
         opacity: 1
-        filter: alpha(opacity=100)
-        -webkit-filter: alpha(opacity=100)
 
         .caption-container
           -webkit-transform: translatey(50px)

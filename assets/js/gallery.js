@@ -19,8 +19,8 @@
     var imgIndex = getImageIndex($(this));
     var imageData = galleryImages[imgIndex];
     setModalImage(galleryModal, imageData);
-    galleryModal.find('.nav-left').toggle(imgIndex > 0);
-    galleryModal.find('.nav-right').toggle(imgIndex < galleryImages.length-1);
+    galleryModal.find('.nav-left').attr('disabled', imgIndex <= 0);
+    galleryModal.find('.nav-right').attr('disabled', imgIndex >= galleryImages.length-1);
     currentModalImageIndex = imgIndex;
     galleryModal.modal();
   };
@@ -32,8 +32,8 @@
       var newImgIndex = currentImgIndex - 1;
       var imageData = galleryImages[newImgIndex];
       setModalImage(galleryModal, imageData);
-      galleryModal.find('.nav-left').toggle(newImgIndex > 0);
-      galleryModal.find('.nav-right').toggle(true);
+      galleryModal.find('.nav-left').attr('disabled', newImgIndex <= 0);
+      galleryModal.find('.nav-right').attr('disabled', false);
       currentModalImageIndex = newImgIndex;
     }
   };
@@ -45,8 +45,8 @@
       var newImgIndex = currentImgIndex + 1;
       var imageData = galleryImages[newImgIndex];
       setModalImage(galleryModal, imageData);
-      galleryModal.find('.nav-left').toggle(true);
-      galleryModal.find('.nav-right').toggle(newImgIndex < galleryImages.length-1);
+      galleryModal.find('.nav-left').attr('disabled', false);
+      galleryModal.find('.nav-right').attr('disabled', newImgIndex >= galleryImages.length-1);
       currentModalImageIndex = newImgIndex;
     }
   };

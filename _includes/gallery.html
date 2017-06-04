@@ -1,7 +1,7 @@
 <section class="section-gallery" id="galeria">
   <div class="container">
     <div class="row">
-    {% for image in site.data.settings.galleryImages %}
+      {% for image in site.data.settings.galleryImages %}
       <div class="col-md-3 col-xs-6 gallery-img" id="gallery_img-{{forloop.index0}}">
         <div class="img-container">
           <img src="{{image.thumbnail}}" alt="{{image.caption}}">
@@ -12,14 +12,22 @@
           </div>
         </div>
       </div>
-    {% endfor %}
+      {% endfor %}
     </div>
 
     <div class="modal fade" id="galleryModal" tabindex="-1" role="dialog" aria-labelledby="galleryModalHeader">
       <div class="modal-dialog" role="document">
-        <button class="modal-nav nav-left"><i class="fa fa-chevron-left"></i></button>
-        <button class="modal-nav nav-right"><i class="fa fa-chevron-right"></i></button>
-        <button class="modal-close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Fechar</span></button>
+        <button class="modal-nav nav-left">
+          {% include svg/arrow-left.svg %}
+        </button>
+        <button class="modal-nav nav-right">
+          {% include svg/arrow-right.svg %}
+        </button>
+        <button class="modal-close" data-dismiss="modal">
+          <span aria-hidden="true">
+          {% include svg/cross-circle.svg %}
+          </span>
+          <span class="sr-only">Fechar</span>
         </button>
         <img src="" alt="">
         <span class="modal-caption"></span>
